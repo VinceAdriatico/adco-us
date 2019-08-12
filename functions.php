@@ -159,3 +159,9 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+
+/**
+ * Load ADCO Core
+ */
+
+ require get_template_directory() . '/adco/adco.php'; 
