@@ -110,4 +110,56 @@
 
        return $is_mobile;
    }
+
+   /**
+    * Template Parts
+    */
+    if( ! function_exists( 'adco_hero_banner' ) ) {
+      function adco_hero_banner() {
+        /**
+         * Get Hero Banner
+         */
+         adco_get_template( 'adco-hero-banner.php' );
+      }
+    }
+    if( ! function_exists( 'adco_product_section' ) ) {
+      function adco_product_section() {
+        /**
+         * Get Product Section
+         */
+         adco_get_template( 'adco-product-section.php' );
+      }
+    }
+    if( ! function_exists( 'adco_mission_section' ) ) {
+      function adco_mission_section() {
+        /**
+         * Get Mission Section
+         */
+         adco_get_template( 'adco-mission-section.php' );
+      }
+    }
+    if( ! function_exists( 'adco_process_section' ) ) {
+      function adco_process_section() {
+        /**
+         * Get Process Section
+         */
+         adco_get_template( 'adco-process-section.php' )
+      }
+    }
+    if( ! function_exists( 'adco_cta_1' ) ) {
+      function adco_cta_1() {
+        /**
+         * Get CTA 1
+         */
+         adco_get_template( 'adco-cta-1.php' );
+      }
+    }
+    if( ! function_exists( 'adco_about_section' ) ) {
+      function adco_about_section() {
+        /**
+         * Get About Section
+         */
+         adco_get_template( 'adco-about-section.php' ); 
+      }
+    }
  }
