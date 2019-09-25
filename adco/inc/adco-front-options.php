@@ -33,15 +33,30 @@
     /**
      * Front Page Settings
      */
-
-     // Hero Banner
-     register_setting( 'adco_front', 'hero-banner-title' );
+     register_setting( 'adco-front', 'adco-hero-banner' );
+     register_setting( 'adco-front', 'adco-product-section' );
+     register_setting( 'adco-front', 'adco-mission-section' );
+     register_setting( 'adco-front', 'adco-process-section' );
+     register_setting( 'adco-front', 'adco-cta-1' );
+     register_setting( 'adco-front', 'adco-about-section' );
   }
 
   /**
    * Front Page Options
    */
-   function adco_front_options() { ?>
+   function adco_front_options() {
+
+     /**
+      * Options
+      */
+      $hero = get_option( 'adco-hero-banner' );
+      $product = get_option( 'adco-product-section' );
+      $mission = get_option( 'adco-mission-section' );
+      $process = get_option( 'adco-process-section' );
+      $cta = get_option( 'adco-cta-1' );
+      $about = get_option( 'adco-about-section' );
+
+     ?>
    <div class="wrap">
      <h1>Front Page Options</h1>
      <form method="post" action="options.php">
@@ -55,14 +70,9 @@
         settings_fields( 'adco_front' );
         do_settings_sections( 'adco_front' ); ?>
         <table class="form-table">
-          <!--- Hero Banner -->
+          <!--- Hero Section --->
           <tr valign="top">
-            <th scope="row"><h5>Hero Banner</h5></th>
-          </tr>
-
-          <tr valign="top">
-            <th scope="row">Title</th>
-            <td><input type="text" name="hero-banner-title" value="<?php echo esc_attr( get_option( 'hero-banner-title' ) ); ?>" /></td>
+            <th scope="row">Hero Banner</th>
           </tr>
         </table>
         <?php

@@ -152,6 +152,7 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
+
 /**
  * Load Jetpack compatibility file.
  */
@@ -164,4 +165,34 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Load ADCO Core
  */
 
- require get_template_directory() . '/adco/adco.php'; 
+ require get_template_directory() . '/adco/adco.php';
+
+
+
+ /**
+  * Minified Files
+  */
+ function minified() {
+
+ 	wp_dequeue_style( 'adco-style' );
+ 	wp_deregister_style( 'adco-style');
+
+ 	wp_enqueue_script( 'jquery' );
+ 	wp_enqueue_script( 'jquery-migrate' );
+
+ 	// Include Minified CLass
+ 	include ADCO_INC . 'class-minified.php';
+
+ 	$a = new ADCO_Minified();
+ 	$a->css_core();
+ 	$a->js_core();
+
+ 	// Minify Stylesheet
+ 	wp_register_style( 'minify-css', get_template_directory_uri() . '/css/minified.css', array(), '1.0.0', false );
+ 	wp_enqueue_style( 'minify-css' );
+
+ 	// Minify Script
+ 	wp_register_script( 'minify', get_template_directory_uri() . '/js/minified.js', 'jquery', '1.0.0', false );
+ 	wp_enqueue_script( 'minify' );
+ }
+ add_action( 'wp_enqueue_scripts', 'minified' );
