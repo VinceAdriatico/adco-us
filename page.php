@@ -12,29 +12,65 @@
  * @package adco
  */
 
-get_header();
-?>
+ /**
+  * Header Template Part
+  */
+  get_header();
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+ /**
+  * Before Default Page Loop
+  */
+  do_action( 'before_default_page_loop' );
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+  /**
+   * Start Loop
+ 	*/
+ while ( have_posts() ) :
+ 	the_post();
+ 	/**
+ 	 * Before Default Page
+ 	 *
+ 	 * @action_hook before_default_page
+ 	 */
+ 	 do_action( 'before_default_page' );
+ ?>
 
-			get_template_part( 'template-parts/content', 'page' );
+ 	<div id="primary" class="content-area">
+ 		<main id="main" class="site-main default-page-container">
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+ 		<?php
+ 			/**
+ 			 * Before Default Page Content
+ 			 *
+ 			 * @action_hook before_default_page_content
+ 			 *
+ 			 * @hooked single_post_open() - 5
+ 			 */
+ 			 do_action( 'before_default_page_content' );
 
-		endwhile; // End of the loop.
-		?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+ 		/**
+ 		 * Afer Default Page Content
+ 		 *
+ 		 * @action_hook after_default_page_content
+ 		 */
+ 		 do_action( 'after_default_page_content' );
+ 		?>
 
-<?php
-get_sidebar();
-get_footer();
+ 		</main><!-- #main -->
+ 	</div><!-- #primary -->
+
+ <?php
+ endwhile; // End of the loop.
+
+ /**
+  * After Default Page Loop
+  *
+  * @action_hook after_default_page_loop
+  */
+  do_action( 'after_default_page_loop');
+
+ /**
+  * Footer Template Part
+  */
+ get_footer();

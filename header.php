@@ -9,6 +9,8 @@
  * @package adco
  */
 
+ $general = get_option( 'general' );
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -17,42 +19,42 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
-	<?php wp_head(); ?>
+	<?php
+  /**
+   * General Meta
+   */
+  do_action( 'general_head' );
+  wp_head(); ?>
+
 </head>
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'adco' ); ?></a>
-
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$adco_description = get_bloginfo( 'description', 'display' );
-			if ( $adco_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $adco_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'adco' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
-
+  <?php
+    /**
+     * Before Header Top
+     */
+     do_action( 'before_header_top' );
+     ?>
+    	<header id="masthead" class="site-header">
+    		<nav id="site-navigation" class="main-navigation">
+    			<a href="<?php get_home_url(); ?>" class="brand-logo">
+    				<img src="<?php echo esc_url( $general['logo_svg'] ); ?>" alt="<?php echo get_bloginfo('display'); ?>" />
+    			</a>
+    			<?php
+    			wp_nav_menu( array(
+    				'theme_location' => 'menu-1',
+    				'menu_id'        => 'nav-mobile',
+    				'menu_class'		 => 'right hide-on-med-and-down'
+    			) );
+    			?>
+    		</nav><!-- #site-navigation -->
+    	</header><!-- #masthead -->
+    <?php
+      /**
+       * After Header Top
+       */
+       do_action( 'after_header_top' );
+       ?>
 	<div id="content" class="site-content">

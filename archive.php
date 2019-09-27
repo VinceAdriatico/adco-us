@@ -4,50 +4,109 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package adco 
+ * @package adco
  */
 
-get_header();
-?>
+ /**
+	* Header Template Part
+	*/
+	get_header();
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+	/**
+	 * Before Archive Page Main
+	 *
+	 * @action_hook before_archive_page_main
+	 */
+	 do_action( 'before_archive_page_main' );
 
-		<?php if ( have_posts() ) : ?>
+	?>
+<!--- Main Content --->
+<div id="primary" class="content-area">
+	<main id="main" class="site-main archive-category">
 
-			<header class="page-header">
-				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
+		<?php
+			/**
+	 		* Check if any posts
+	 		*/
+	 	 if( have_posts() ) :
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+		/**
+		 * Before Archive Page Loop
+		 *
+		 * @action_hook before_archive_page_loop
+		 */
+		 do_action( 'before_archive_page_loop' );
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+		/**
+		 * Start the Loop
+		 */
+		 while( have_posts() ) :
+			 the_post();
+
+			 /**
+			  * Before Archive Page Item
+				*
+				* @action_hook before_archive_page_item
+				*/
+				do_action( 'before_archive_page_item');
+
+				/**
+				 * Archive Page Item
 				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+				 do_action( 'archive_page_item' ):
 
-			endwhile;
+			 /**
+			  * After Archive Page Item
+				*
+				* @action_hook after_archive_page_item
+				*/
+				do_action( 'after_archive_page_item');
 
-			the_posts_navigation();
 
-		else :
+			 endwhile; // End the Loop
 
+			 /**
+				* Post Navigation
+				*/
+				the_posts_navigation();
+
+				/**
+				 * After Archive Page Loop
+				 *
+				 * @action_hook after_archive_page_loop
+				 */
+				 do_action( 'after_archive_page_loop' );
+	 else:
+	 /**
+		* Before No Posts Found
+		*
+		* @action_hook before_no_posts
+		*/
+		do_action( 'before_no_posts' );
+
+		 /**
+			* No Posts Found
+			*/
 			get_template_part( 'template-parts/content', 'none' );
 
-		endif;
-		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
+	/**
+	 * After No Posts Found
+	 *
+	 * @action_hook after_no_posts
+	 */
+	 do_action( 'after_no_posts' );
+ endif; ?>
+</main>
+</div>
 <?php
-get_sidebar();
+/**
+* After Archive Page Main
+*
+* @action_hook after_archive_page_main
+*/
+do_action( 'after_archive_page_main' );
+
+/**
+* Footer Template Part
+*/
 get_footer();

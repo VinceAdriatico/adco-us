@@ -7,31 +7,70 @@
  * @package adco
  */
 
-get_header();
-?>
+ /**
+  * Header Template Part
+  */
+ get_header();
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+ /**
+  * Before Single Post Loop
+  *
+  * @action_hook before_single_post
+  */
+ do_action( 'before_single_post_loop' );
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+ /**
+  * Start Loop
+  */
+ while ( have_posts() ) :
+ 	the_post();
+ 	/**
+ 	 * Before Single Post
+ 	 *
+ 	 * @action_hook before_single_post
+ 	 */
+ 	 do_action( 'before_single_post' );
+ ?>
 
-			get_template_part( 'template-parts/content', get_post_type() );
+ 	<div id="primary" class="content-area">
+ 		<main id="main" class="site-main single-post-container">
 
-			the_post_navigation();
+ 		<?php
+ 			/**
+ 			 * Before Content Single Post
+ 			 *
+ 			 * @action_hook before_content_single_post
+ 			 */
+ 			 do_action( 'before_content_single_post' );
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+			 /**
+			  * Content Single Post
+				*
+				* @action_hook content_single_post
+				*/
+				do_action( 'content_single_post' );
 
-		endwhile; // End of the loop.
-		?>
+ 			/**
+ 			 * After Single Post
+ 			 *
+ 			 * @action_hook after_single_post
+ 			 */
+ 			do_action( 'after_content_single_post' );
+ 		?>
+ 		</main><!-- #main -->
+ 	</div><!-- #primary -->
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+ <?php
+ endwhile; // End of the loop.
 
-<?php
-get_sidebar();
-get_footer();
+ /**
+  * After Single Post Loop
+  *
+  * @action_hook after_single_post
+  */
+ do_action( 'after_single_post_loop' );
+
+ /**
+  * Footer Template Part
+  */
+ get_footer();

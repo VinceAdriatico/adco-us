@@ -9,28 +9,55 @@
  * @package adco
  */
 
+ /**
+  * Options
+	*/
+	$footer = get_option( 'footer' );
+
+/**
+ * Before Main Footer
+ */
+ do_action( 'before_main_footer' );
 ?>
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'adco' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'adco' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'adco' ), 'adco', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
+	<footer id="colophon" class="site-footer page-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col 16 s12">
+					<h5 class="white-text"><?php echo esc_attr( $footer['title'] ); ?></h5>
+					<p class="grey-text' text-lighten-4"><?php echo esc_attr( $footer['content'] ); ?></p>
+				</div>
+				<div class="col 14 offset-12 s12">
+					<?php
+					if( is_active_sidebar( 'footer-main' ) ):
+						dynamic_sidebar( 'footer-main' );
+					else:
+						echo '<h5 class="no-posts">No widgets found in <span>Widget -> Footer Menu</span>.</h5>';
+					endif;
+					?>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="container">
+				Created by <a href="https://www.linkedin.com/in/vince-adriatico" ref="nofollow" target="_blank">Vince Adriatico</a>
+			</div>
+		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
-<?php wp_footer(); ?>
+<?php
+/**
+ * After Main Footer
+ */
+ do_action( 'after_main_footer' );
+
+/** Template Footer */
+wp_footer();
+
+?>
 
 </body>
 </html>

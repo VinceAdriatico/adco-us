@@ -39,22 +39,14 @@
      register_setting( 'adco-front', 'adco-process-section' );
      register_setting( 'adco-front', 'adco-cta-1' );
      register_setting( 'adco-front', 'adco-about-section' );
+     register_setting( 'adco-front', 'adco-theme-section' );
+     register_setting( 'adco-front', 'adco-contact-modal' );
   }
 
   /**
    * Front Page Options
    */
    function adco_front_options() {
-
-     /**
-      * Options
-      */
-      $hero = get_option( 'adco-hero-banner' );
-      $product = get_option( 'adco-product-section' );
-      $mission = get_option( 'adco-mission-section' );
-      $process = get_option( 'adco-process-section' );
-      $cta = get_option( 'adco-cta-1' );
-      $about = get_option( 'adco-about-section' );
 
      ?>
    <div class="wrap">
@@ -68,14 +60,19 @@
         * @see do_settings_sections() sections for option_group
         */
         settings_fields( 'adco_front' );
-        do_settings_sections( 'adco_front' ); ?>
-        <table class="form-table">
-          <!--- Hero Section --->
-          <tr valign="top">
-            <th scope="row">Hero Banner</th>
-          </tr>
-        </table>
-        <?php
+        do_settings_sections( 'adco_front' );
+
+        // Display Front Page Setttings
+        adco_hero_banner_config();
+        adco_product_section_config();
+        adco_mission_section_config();
+        adco_process_section_config();
+        adco_cta_1_config():
+        adco_about_section_config();
+        adco_theme_section_config();
+        adco_contact_modal_config();
+
+
         /**
          * Submit Form
          */

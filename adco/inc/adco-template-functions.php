@@ -109,7 +109,8 @@
        }
 
        return $is_mobile;
-   }
+    }
+  }
 
    /**
     * Template Parts
@@ -122,6 +123,16 @@
          adco_get_template( 'adco-hero-banner.php' );
       }
     }
+    // Configuration File
+    if( ! function_exists( 'adco_hero_banner_config' ) ) {
+      function adco_hero_banner_config() {
+        /**
+         * Get Hero Banner Configuration
+         */
+         adco_get_template( 'config/config/config-adco-hero-banner.php' );
+      }
+    }
+
     if( ! function_exists( 'adco_product_section' ) ) {
       function adco_product_section() {
         /**
@@ -130,6 +141,16 @@
          adco_get_template( 'adco-product-section.php' );
       }
     }
+    // Configuration File
+    if( ! function_exists( 'adco_product_section_config' ) ) {
+      function adco_product_section_config() {
+        /**
+         * Get Product Section Configuration
+         */
+         adco_get_template( 'config/config-adco-product-section.php' );
+      }
+    }
+
     if( ! function_exists( 'adco_mission_section' ) ) {
       function adco_mission_section() {
         /**
@@ -138,6 +159,16 @@
          adco_get_template( 'adco-mission-section.php' );
       }
     }
+    // Configuration File
+    if( ! function_exists( 'adco_mission_section_config' ) ) {
+      function acdo_mission_section_config() {
+        /**
+         * Get Mission Section Configuration
+         */
+         adco_get_template( 'config/config-adco-mission-section.php' );
+      }
+    }
+
     if( ! function_exists( 'adco_process_section' ) ) {
       function adco_process_section() {
         /**
@@ -146,6 +177,16 @@
          adco_get_template( 'adco-process-section.php' )
       }
     }
+    // Configuration File
+    if( ! function_exists( 'adco_process_section_config' ) ) {
+      function adco_process_section_config() {
+        /**
+         * Get Process Section Configuration
+         */
+         adco_get_template( 'config/config-process-section.php' );
+      }
+    }
+
     if( ! function_exists( 'adco_cta_1' ) ) {
       function adco_cta_1() {
         /**
@@ -154,12 +195,66 @@
          adco_get_template( 'adco-cta-1.php' );
       }
     }
+    // Configuration File
+    if( ! function_exists( 'adco_cta_1_config' ) ) {
+      function adco_cta_1_config() {
+        /**
+         * Get CTA 1 Configuration
+         */
+         adco_get_template( 'config/config-adco-cta-1.php' );
+      }
+    }
+
     if( ! function_exists( 'adco_about_section' ) ) {
       function adco_about_section() {
         /**
          * Get About Section
          */
-         adco_get_template( 'adco-about-section.php' ); 
+         adco_get_template( 'adco-about-section.php' );
       }
     }
- }
+    // Configuration File
+    if( ! function_exists( 'adco_about_section_config' ) ) {
+      function adco_about_section_config() {
+        /**
+         * Get About Section Configuration
+         */
+         adco_get_template( 'config/config-adco-about-section.php' );
+      }
+    }
+
+    if( ! function_exists( 'adco_theme_section' ) ) {
+      function adco_theme_section() {
+        /**
+         * Get Theme Section
+         */
+         adco_get_template( 'adco-theme-section.php' ):
+      }
+    }
+    // Configuration File
+    if( ! function_exists( 'adco_theme_section_config' ) ) {
+      function adco_theme_section_config() {
+        /**
+         * Get Theme Section Configuration
+         */
+         adco_get_template( 'config/config-adco-theme-section.php' );
+      }
+    }
+
+    if( ! function_exists( 'adco_contact_modal' ) ) {
+      function adco_contact_modal() {
+        /**
+         * Get Contact Modal
+         */
+         adco_get_template( 'adco-contact-modal.php' ):
+      }
+    }
+    // Configuration File
+    if( ! function_exists( 'adco_contact_modal_config' ) ) {
+      function adco_contact_modal_config() {
+        /**
+         * Get Contact Modal Configuration
+         */
+         adco_get_template( 'config/config-adco-contact-modal.php' );
+      }
+    }

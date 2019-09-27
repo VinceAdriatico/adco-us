@@ -49,7 +49,8 @@
       /**
        * General
        */
-       register_setting( 'adco_main', 'logo-svg' );
+       register_setting( 'acdo_main', 'general' );
+       register_setting( 'adco_main', 'footer' );
     }
 
     /**
@@ -71,12 +72,43 @@
              */
              settings_fields( 'adco_main' );
              do_settings_sections( 'adco_main' );
+
+             $general = get_option( 'general' );
+             $footer = get_option( 'footer' );
              ?>
              <table class="form-table">
                <!--- General --->
                <tr valign="top">
-                 <th scope="row">Logo SVG</th>
-                 <td><input type="url" name="logo-svg" value="<?php echo esc_url( get_option( 'logo-svg' ) ); ?>" /></td>
+                 <th scope="row"><h3>General</h3></th>
+               </tr>
+
+               <tr valign="top">
+                 <th scope="row">Logo - SVG</th>
+                 <td><input type="url" name="general[logo_svg]" value="<?php echo esc_url( $general['logo_svg'] ); ?>" /></td>
+               </tr>
+
+               <tr valign="top">
+                 <th scope="row">Phone</th>
+                 <td><input type="text" name="general[phone]" value="<?php echo esc_attr( $general['phone'] ); ?>" /></td>
+               </tr>
+
+               <tr valign="top">
+                 <th scope="row">E-Mail</th>
+                 <td><input type="text" name="general[email]" value="<?php echo esc_attr( $general['email'] ); ?>" /></td>
+               </tr>
+
+               <tr valign="top">
+                 <th scope="row"><h3>Footer</h3></th>
+               </tr>
+
+               <tr valign="top">
+                 <th scope="row">Title<th>
+                 <td><input type="text" name="footer[title]" value="<?php echo esc_attr( $footer['title'] ); ?>" /></td>
+               </tr>
+
+               <tr valign="top">
+                 <th scope="row">Content</th>
+                 <td><textarea name="footer[content]"><?php echo esc_textarea( $footer['content'] ); ?></textarea></td>
                </tr>
              </table>
              <?php

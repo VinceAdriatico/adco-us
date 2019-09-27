@@ -11,6 +11,35 @@
  }
 
  /**
+  * Hero Btn
+  *
+  * General Hero Button
+  *
+  * @since 1.0.0
+  *
+  * @return string
+  */
+  if( ! function_exists( 'hero_btn' ) ) {
+    hero_btn( $format = true, $href = '#', $rel = '', $text = '', $class = '' ) {
+      /**
+       * Generated Tag
+       */
+       if( $format ) {
+
+         // General
+         $tag = "<a href='$href' title='$title' rel='$rel' class='hero-btn $class'>$text</a>";
+
+       } else {
+
+         // Modal
+         $tag = "<a data-target='#$href', rel='nofollow $rel' class='hero-btn $class'>$text</a>";
+       }
+
+       return $tag;
+    }
+  }
+
+ /**
   * WebP Variation
   *
   * @since 1.0.0
