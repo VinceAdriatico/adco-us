@@ -70,7 +70,6 @@
    }
 
 
-
    // Include Minified Class
    include ADCO_INC . 'class-minified.php';
 
@@ -104,6 +103,7 @@
  }
  add_action( 'admin_enqueue_scripts', 'admin_core_files' );
 
+
 /**
  * Initialize Custom Post Type for Featured Services
  */
@@ -113,7 +113,6 @@
      'public'           => true,
      'show_ui'          => true,
      'show_in_menu'     => 'adco_options',
-     'capability_type'  => 'post',
      'has_archive'      => true,
      'hierarchical'     => false,
      'rewrite'          => array( 'slug'  => 'featured-service' ),
@@ -211,7 +210,6 @@
       'public'          => true,
       'show_ui'         => true,
       'show_in_menu'     => 'adco_options',
-      'capability_type'  => 'post',
       'has_archive'      => true,
       'hierarchical'     => false,
       'rewrite'          => array( 'slug'  => 'core-process' ),

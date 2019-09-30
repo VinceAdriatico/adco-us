@@ -8,7 +8,7 @@
 
  if( ! defined( 'ABSPATH' ) ) {
    exit;
- }
+ } 
 
  /**
   * Initialize Theme Settings Menu
