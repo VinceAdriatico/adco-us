@@ -17,4 +17,8 @@
   */
   $option = get_option( 'adco-mission-section' );
 ?>
-<h1>Mission Section</h1>
+<section class="home-section mission">
+  <h1><?php echo esc_attr( $option['title'] ); ?></h1>
+  <h5><?php echo esc_attr( $option['subtitle'] ); ?></h5>
+  <p><?php echo esc_attr( $option['content'] ); ?></p>
+</section>

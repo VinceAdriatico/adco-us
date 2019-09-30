@@ -12,5 +12,12 @@
    exit;
  }
 
+/**
+ * Options
+ */
+ $option = get_option( 'adco-contact-modal' );
 ?>
-<h1>Contact Modal</h1>
+<div class="home-section modal" id="contactModal">
+  <h4><?php echo $option['title']; ?></h4>
+  <?php echo do_shortcode( $option['shortcode'] ); ?>
+</div>

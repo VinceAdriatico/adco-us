@@ -11,5 +11,16 @@
  if( ! defined( 'ABSPATH' ) ) {
    exit;
  }
+
+ /**
+  * Options
+  */
+  $option = get_option( 'adco-about-section' );
+
+  // Parts
+  $img = image_webp( $option['webp'], $option['bg'] );
 ?>
-<h1>About Section</h1>
+<section class="home-section about" style="background-image: url(<?php echo $img; ?>)">
+  <h1><?php echo $option['title']; ?></h1>
+  <p><?php echo $option['content']; ?></p>
+</section>

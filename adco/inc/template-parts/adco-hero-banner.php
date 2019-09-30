@@ -22,7 +22,7 @@
  /**
   * Parts
   */
- $btn = hero_btn( false, 'contactModal', '', 'Contact', '' );
+ $btn = hero_btn( false, 'contactModal', '', esc_attr( $option['txt'] ), '' );
 
 ?>
 <section class="home-section hero" style="background-image: url(<?php echo $option['bg']; ?>);">

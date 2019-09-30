@@ -16,7 +16,7 @@
  * Options
  */
  $option = get_option( 'adco-product-section' );
- $post = $option['post_type'];
+ $post = esc_attr( $option['post_type'] );
 
  /**
   * WP_Query
@@ -34,8 +34,8 @@
   $query = new WP_Query( $args );
   ?>
   <section class="home-section product">
-    <h1><?php echo $option['title']; ?></h1>
-    <p><?php echo $option['subtitle']; ?></td>
+    <h1><?php echo esc_attr( $option['title'] ); ?></h1>
+    <p><?php echo esc_attr( $option['subtitle'] ); ?></td>
     <?php if( $query->have_posts() ) {
       echo '<ul>';
       while( $query->have_posts() ) {

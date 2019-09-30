@@ -12,5 +12,16 @@
    exit;
  }
 
+ /**
+  * Options
+  */
+  $option = get_option( 'adco-cta-1' );
+
+  // Parts
+  $btn = hero_btn( false, 'contactModal', '', esc_attr( $option['txt'] ), '' );
+
  ?>
- <h1>CTA 1</h1>
+<section class="home-section action">
+  <h2><?php echo $option['title']; ?></h2>
+  <?php echo $btn; ?>
+</section>

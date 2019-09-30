@@ -28,6 +28,11 @@
     </tr>
 
     <tr valign="top">
+      <th scope="row">Btn Text</th>
+      <td><input type="text" name="adco-theme-section[txt]" value="<?php echo esc_attr( $option['txt'] ); ?>" /></td>
+    </tr>
+
+    <tr valign="top">
       <th scope="row">Link</th>
       <td><input type="url" name="adco-theme-section[link]" value="<?php echo esc_url( $option['link'] ); ?>" /></td>
     </tr>

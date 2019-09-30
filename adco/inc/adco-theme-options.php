@@ -8,7 +8,7 @@
 
  if( ! defined( 'ABSPATH' ) ) {
    exit;
- } 
+ }
 
  /**
   * Initialize Theme Settings Menu
@@ -17,7 +17,7 @@
     add_menu_page(
         'Theme Settings',      // Page Title
         'Theme Settings',      // Menu Title
-        'Capability',          // Capability
+        'manage_options',      // Capability
         'adco_options',        // Menu Slug
         '',                    // Callback Function
         '',                    // Icon

@@ -23,7 +23,12 @@
     </tr>
 
     <tr valign="top">
-      <th scope="row">Shortcode</th>
-      <td><input type="text" name="adco-cta-1[text]" value="<?php echo esc_attr( $option['text'] ); ?>" /></td>
+      <th scope="row">Title</th>
+      <td><input type="text" name="adco-cta-1[title]" value="<?php echo esc_attr( $option['title'] ); ?>" /></td>
+    </tr>
+
+    <tr valign="top">
+      <th scope="row">Modal Button Text</th>
+      <td><input type="text" name="adco-cta-1[txt]" value="<?php echo esc_attr( $option['txt'] ); ?>" /></td>
     </tr>
   </table>
