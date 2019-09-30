@@ -1,0 +1,79 @@
+/**
+ * Typography
+ */
+ @font-face {
+   font-family: 'Montserrat Regular';
+   src: url("fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
+   font-display: swap;
+ }
+ @font-face {
+   font-family: 'Montserrat Bold';
+   src: url("fonts/Montserrat/Montserrat-Bold.ttf") format("truetype");
+   font-display: swap;
+ }
+ @font-face {
+   font-family: 'Montserrat Light';
+   src: url("fonts/Montserrat/Montserrat-Light.ttf") format("truetype");
+   font-display: swap;
+ }
+ @font-face {
+   font-family: 'Montserrat Italic';
+   src: url("fonts/Montserrat/Montserrat-Italic.ttf") format("truetype");
+   font-display: swap;
+ }
+ @font-face {
+   font-family: 'Open Regular';
+   src: url("fonts/Open_Sans/OpenSans-Regular.ttf") format("truetype");
+   font-display: swap;
+ }
+ @font-face {
+   font-family: 'Open Bold';
+   src: url("fonts/Open_Sans/OpenSans-Bold.ttf") format("truetype");
+   font-display: swap;
+ }
+ @font-face {
+   font-family: 'Open Italic';
+   src: url("fonts/Open_Sans/OpenSans-Italic.ttf") format("truetype");
+   font-display: swap;
+ }
+ .mon-reg {
+   font-family: 'Montserrat Regular', "Helvetica", "Arial", sans-serif;
+ }
+ .mon-bold {
+   font-family: 'Montserrat Bold', "Helvetica", "Arial", sans-serif;
+ }
+ .mon-light {
+   font-family: 'Montserrat Light', "Helvetica", "Arial", sans-serif;
+ }
+ .mon-italic {
+   font-family: 'Montserrat Italic', "Helvetica", "Arial", sans-serif;
+ }
+ .open-reg {
+   font-family: 'Open Regular', "Helvetica", "Arial", sans-serif;
+ }
+ .open-bold {
+   font-family: 'Open Bold', "Helvetica", "Arial", sans-serif;
+ }
+ .open-italic {
+   font-family: 'Open Italic', "Helvetica", "Arial", sans-serif;
+ }
+
+ h1, h2, h3, h4, h5, h6 {
+   font-family: "Montserrat Bold", "Helvetica", "Arial", sans-serif;
+ }
+ body, p {
+   font-family: "Open Regular", "Helvetica", "Arial", sans-serif;
+ }
+ a {
+   color: rgba(255, 255, 255, 0.8) !important;
+ }
+ a:visited {
+   color: rgba(255,255,255, 0.7) !important;
+ }
+ a:hover {
+   color: rgba(255,255,255, 1) !important;
+ }
+
+ /**
+  * Home Page
+  */

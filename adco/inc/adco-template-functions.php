@@ -129,7 +129,7 @@
         /**
          * Get Hero Banner Configuration
          */
-         adco_get_template( 'config/config/config-adco-hero-banner.php' );
+         adco_get_template( 'config/config-adco-hero-banner.php' );
       }
     }
 
@@ -161,7 +161,7 @@
     }
     // Configuration File
     if( ! function_exists( 'adco_mission_section_config' ) ) {
-      function acdo_mission_section_config() {
+      function adco_mission_section_config() {
         /**
          * Get Mission Section Configuration
          */
@@ -174,7 +174,7 @@
         /**
          * Get Process Section
          */
-         adco_get_template( 'adco-process-section.php' )
+         adco_get_template( 'adco-process-section.php' );
       }
     }
     // Configuration File
@@ -228,7 +228,7 @@
         /**
          * Get Theme Section
          */
-         adco_get_template( 'adco-theme-section.php' ):
+         adco_get_template( 'adco-theme-section.php' );
       }
     }
     // Configuration File
@@ -246,7 +246,7 @@
         /**
          * Get Contact Modal
          */
-         adco_get_template( 'adco-contact-modal.php' ):
+         adco_get_template( 'adco-contact-modal.php' );
       }
     }
     // Configuration File

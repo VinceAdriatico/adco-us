@@ -17,7 +17,7 @@
  */
  $company = get_bloginfo( 'display' );
  $tagline = get_bloginfo( 'description' );
- $option = get_option( 'adco-hero-banner' ):
+ $option = get_option( 'adco-hero-banner' );
 
  /**
   * Parts

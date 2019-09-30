@@ -19,7 +19,7 @@
   ?>
   <table class="form-table">
     <tr valign="top">
-      <th scope="row"><h3>CTA 1</h3></th>
+      <th scope="row"><p>CTA 1</p></th>
     </tr>
 
     <tr valign="top">

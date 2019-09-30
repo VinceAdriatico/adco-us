@@ -20,7 +20,7 @@
   ?>
   <table class="form-table">
     <tr valign="top">
-      <th scope="row"><h3>Process Section</h3></th>
+      <th scope="row"><p>Process Section</p></th>
     </tr>
 
     <tr valign="top">

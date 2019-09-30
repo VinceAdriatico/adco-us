@@ -22,14 +22,14 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer page-footer">
+	<footer class="page-footer">
 		<div class="container">
 			<div class="row">
-				<div class="col 16 s12">
+				<div class="col l6 s12">
 					<h5 class="white-text"><?php echo esc_attr( $footer['title'] ); ?></h5>
 					<p class="grey-text' text-lighten-4"><?php echo esc_attr( $footer['content'] ); ?></p>
 				</div>
-				<div class="col 14 offset-12 s12">
+				<div class="col l4 offset-l2 s12">
 					<?php
 					if( is_active_sidebar( 'footer-main' ) ):
 						dynamic_sidebar( 'footer-main' );

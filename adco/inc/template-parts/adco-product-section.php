@@ -43,21 +43,23 @@
         /**
          * Meta
          */
-         $id = get_the_ID():
+         $id = get_the_ID();
          $cta = get_post_meta( $id, '_page', true );
          $link = get_the_permalink( $cta );
         ?>
-        <li class="card">
-          <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="<?php echo get_the_post_thumbnail_url(); ?>" />
-          </div>
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4"><?php echo get_the_title(); ?><i class="material-icons right">more_vert</i></span>
-            <p><a href="<?php echo $link; ?>">Read More</a></p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4"><?php echo get_the_title(): ?><i class="material-icons right">close</i></span>
-            <p><?php echo get_the_excerpt(): ?></p>
+        <li>
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="<?php echo get_the_post_thumbnail_url(); ?>" />
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4"><?php echo get_the_title(); ?><i class="material-icons right">more_vert</i></span>
+              <p><a href="<?php echo $link; ?>">Read More</a></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4"><?php echo get_the_title(); ?><i class="material-icons right">close</i></span>
+              <p><?php echo get_the_excerpt(); ?></p>
+            </div>
           </div>
         </li>
       <?php

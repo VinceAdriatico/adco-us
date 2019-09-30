@@ -12,4 +12,9 @@
    exit;
  }
 
+ /**
+  * Options
+  */
+  $option = get_option( 'adco-mission-section' );
 ?>
+<h1>Mission Section</h1>

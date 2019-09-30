@@ -20,19 +20,19 @@
   * @return string
   */
   if( ! function_exists( 'hero_btn' ) ) {
-    hero_btn( $format = true, $href = '#', $rel = '', $text = '', $class = '' ) {
+    function hero_btn( $format = true, $href = '#', $rel = '', $text = '', $class = '' ) {
       /**
        * Generated Tag
        */
        if( $format ) {
 
          // General
-         $tag = "<a href='$href' title='$title' rel='$rel' class='hero-btn $class'>$text</a>";
+         $tag = "<a href='$href' title='$title' rel='$rel' class='waves-effect waves-light btn hero-btn $class'>$text</a>";
 
        } else {
 
          // Modal
-         $tag = "<a data-target='#$href', rel='nofollow $rel' class='hero-btn $class'>$text</a>";
+         $tag = "<a data-target='#$href', rel='nofollow $rel' class='waves-effect waves-light btn hero-btn $class'>$text</a>";
        }
 
        return $tag;

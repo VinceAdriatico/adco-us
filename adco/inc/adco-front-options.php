@@ -46,9 +46,7 @@
   /**
    * Front Page Options
    */
-   function adco_front_options() {
-
-     ?>
+   function adco_front_options() { ?>
    <div class="wrap">
      <h1>Front Page Options</h1>
      <form method="post" action="options.php">
@@ -59,15 +57,15 @@
         * @see settings_fields() nonce, action & option_page
         * @see do_settings_sections() sections for option_group
         */
-        settings_fields( 'adco_front' );
-        do_settings_sections( 'adco_front' );
+        settings_fields( 'adco-front' );
+        do_settings_sections( 'adco-front' );
 
         // Display Front Page Setttings
         adco_hero_banner_config();
         adco_product_section_config();
         adco_mission_section_config();
         adco_process_section_config();
-        adco_cta_1_config():
+        adco_cta_1_config();
         adco_about_section_config();
         adco_theme_section_config();
         adco_contact_modal_config();

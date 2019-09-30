@@ -102,7 +102,7 @@
                </tr>
 
                <tr valign="top">
-                 <th scope="row">Title<th>
+                 <th scope="row">Title</th>
                  <td><input type="text" name="footer[title]" value="<?php echo esc_attr( $footer['title'] ); ?>" /></td>
                </tr>
 
@@ -120,38 +120,3 @@
      </div>
      <?php
      }
-
-     /**
-      * Enqueue Admin Scripts
-      */
-      function admin_core_files($hook) {
-
-        /**
-         * Only load on plugin pages
-         */
-
-        // Gather Plugin Page Hooks
-        $theme_options = 'theme-settings_page_primay_ext';
-        $front_options = 'theme-settings_page_front_ext';
-
-        // Set as array
-        $options = array( $theme_options, $front_options );
-
-        // Check in array
-        $optionsComp = in_array( $hook, $options );
-
-        if($optionsComp != true ) {
-            return;
-        }
-        // Register Admin CSS
-        wp_enqueue_style(
-            'admin-css',
-            get_template_directory_uri() . '/css/admin.css'
-        );
-        $materialBox = "
-            .material-box-shadow {
-                box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-            }";
-        wp_add_inline_style( 'admin-css', $materialBox );
-      }
-      add_action( 'admin_enqueue_scripts', 'admin_core_files' );

@@ -24,19 +24,18 @@
 
   class ADCO_Minified {
     public function css_core() {
-      $minifedpath = get_template_directory() . '/css/minified.css';
+      $minifiedpath = get_template_directory() . '/css/minified.css';
 
       /**
        * Local Scripts
        */
-       $style = get_template_directory() . '/style.css';
+       // $style = get_template_directory() . 'style.css';
        $adco = get_template_directory() . '/css/adco.css';
        $import = get_template_directory() . '/css/import.css';
        $materialize = get_template_directory() . '/materialize/css/materialize.css';
        $slick = get_template_directory() . '/slick/slick.css';
 
-       $minifier = new Minify\CSS( $style, $adco );
-       $minifier->add( $import );
+       $minifier = new Minify\CSS( $adco, $import );
        $minifier->add( $materialize );
        $minifier->add( $slick );
        $minifier->minify( $minifiedpath );
@@ -54,6 +53,7 @@
 
        $minifier = new Minify\JS( $adco );
        $minifier->add( $import );
+       $minifier->add( $materialize ); 
        $minifier->add( $slick );
        $minifier->minify( $minifiedpath );
     }

@@ -30,7 +30,6 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'adco' ); ?></a>
   <?php
     /**
      * Before Header Top
@@ -44,7 +43,7 @@
     			</a>
     			<?php
     			wp_nav_menu( array(
-    				'theme_location' => 'menu-1',
+    				'theme_location' => 'primary',
     				'menu_id'        => 'nav-mobile',
     				'menu_class'		 => 'right hide-on-med-and-down'
     			) );

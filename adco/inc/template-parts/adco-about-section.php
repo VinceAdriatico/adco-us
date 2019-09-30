@@ -11,3 +11,5 @@
  if( ! defined( 'ABSPATH' ) ) {
    exit;
  }
+?>
+<h1>About Section</h1>

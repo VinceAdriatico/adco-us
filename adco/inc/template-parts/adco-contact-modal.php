@@ -9,5 +9,8 @@
  */
 
  if( ! defined( 'ABSPATH' ) ) {
-   exit; 
+   exit;
  }
+
+?>
+<h1>Contact Modal</h1>

@@ -20,7 +20,7 @@
   ?>
   <table class="form-table">
     <tr valign="top">
-      <th scope="row"><h3>Contact Modal</h3></th>
+      <th scope="row"><p>Contact Modal</p></th>
     </tr>
 
     <tr valign="top">

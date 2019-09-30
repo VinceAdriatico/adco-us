@@ -20,7 +20,7 @@
  ?>
  <table class="form-table">
    <tr valign="top">
-     <th scope="row"><h3>Product Section</h3></th>
+     <th scope="row"><p>Product Section</p></th>
    </tr>
 
    <tr valign="top">
@@ -29,8 +29,8 @@
    </tr>
 
    <tr valign="top">
-    <th scope="row">Subtitle</th>
-    <td><input type="text" name="adco-product-section[subtitle]" value="<?php echo esc_attr( $option['subtitle'] ); ?>" /></td>
+     <th scope="row">Subtitle</th>
+     <td><input type="text" name="adco-product-section[subtitle]" value="<?php echo esc_attr( $option['subtitle'] ); ?>" /></td>
    </tr>
 
    <tr valign="top">

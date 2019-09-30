@@ -36,7 +36,7 @@
   		'after_title'   => '</h2>',
    ) );
  }
- add_action( 'after_setup_theme', 'registe_footer_main' );
+ add_action( 'after_setup_theme', 'register_footer_main' );
 
  /**
   * Add Default Sidebar
@@ -112,7 +112,7 @@
      'label'            => 'Featured Services',
      'public'           => true,
      'show_ui'          => true,
-     'show_in_menu'     => 'arg_options',
+     'show_in_menu'     => 'adco_options',
      'capability_type'  => 'post',
      'has_archive'      => true,
      'hierarchical'     => false,
@@ -125,10 +125,9 @@
        'excerpt',
        'thumbnail',
        'page-attributes', ) );
-       register_post_type( 'featured_service', $args );
-   )
+     register_post_type( 'featured_service', $args );
+  }
    add_action( 'init', 'featured_services' );
- }
 
  /**
   * Add Post Meta for Featured Services
@@ -201,7 +200,7 @@
   }
   add_action( 'save_post', 'core_feature_meta' );
 
-  
+
 
  /**
   * Initialize Custom Post Type for Core Process
@@ -211,7 +210,7 @@
       'label'           => 'Core Processes',
       'public'          => true,
       'show_ui'         => true,
-      'show_in_menu'     => 'arg_options',
+      'show_in_menu'     => 'adco_options',
       'capability_type'  => 'post',
       'has_archive'      => true,
       'hierarchical'     => false,
@@ -225,5 +224,5 @@
         'thumbnail',
         'page-attributes', ) );
         register_post_type( 'core_processes', $args );
-    )
   }
+  add_action( 'init', 'core_processes' );

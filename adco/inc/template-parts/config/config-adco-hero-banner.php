@@ -20,17 +20,17 @@
   ?>
   <table class="form-table">
     <tr valign="top">
-      <th scope-"row"><h3>Hero Banner</h3></th>
+      <th scope-"row"><p>Hero Banner</p></th>
     </tr>
 
-    <tr valign="top">>
+    <tr valign="top">
       <th scope="row">Background - SVG</th>
       <td><input type="url" name="adco-hero-banner[bg]" value="<?php echo esc_url( $option['bg'] ); ?>" /></td>
     </tr>
 
     <tr valign="top">
       <th scope="row">Main SVG</th>
-      <td><textarea name="adco-hero-banner[svg]"><?php echo esc_textarea( $option['svg'] ); ?></td>
+      <td><textarea name="adco-hero-banner[svg]"><?php echo esc_textarea( $option['svg'] ); ?></textarea></td>
     </tr>
 
     <tr valign="top">

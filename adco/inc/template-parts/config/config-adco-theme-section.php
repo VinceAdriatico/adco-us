@@ -19,7 +19,7 @@
   ?>
   <table class="form-table">
     <tr valign="top">
-      <th scope="row"><h3>Theme Section</h3></th>
+      <th scope="row"><p>Theme Section</p></th>
     </tr>
 
     <tr valign="top">
