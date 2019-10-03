@@ -126,9 +126,11 @@
         $title = $internal['error-title'];
         $home = get_home_url();
         $company = get_bloginfo('display');
+        $lin1 = $internal['linear-gradient-1'];
+        $lin2 = $internal['linear-gradient-2'];
 
         // Parts
-        $open = "<div class='general header' style='background-image: linear-gradient( to right, $internal['linear-gradient-1'], $internal['linear-gradient-2'] ), url($bg);'>";
+        $open = "<div class='general header' style='background-image: linear-gradient( to right, $lin1, $lin2 ), url($bg);'>";
         $title = "<h1>$title</h1>";
         $link = "<a href='$home' title='$company' rel='home'>Go to Home</a>";
 
@@ -139,23 +141,25 @@
      }
    }
    if( ! function_exists( 'adco_open_archive' ) ) {
-     $content = '';
-     if( is_page_template( 'home' ) ) {
-       $class = 'home';
-     } else {
-       $class = 'archive';
+     function adco_open_archive() {
+       $content = '';
+       if( is_page_template( 'home' ) ) {
+         $class = 'home';
+       } else {
+         $class = 'archive';
+       }
+       $open = "<section class='$class' itemscope='itemscope' itemtype='https://schema.org/Blog'>";
+
+       // Concatenate
+       $content .= $open;
+
+       echo $content;
      }
-     $open = "<ul class='$class'>";
-
-     // Concatenate
-     $content .= $open;
-
-     echo $content;
    }
    if( ! function_exists( 'adco_close_archive' ) ) {
      function adco_close_archive() {
        $content = '';
-       $close = '</ul>';
+       $close = '</section>';
 
        // Concatenate
        $content .= $close;
@@ -164,15 +168,17 @@
      }
    }
    if( ! function_exists( 'adco_archive_title' ) ) {
-     /**
-      * Archive Header Parts
-      */
+     function adco_archive_title() {
+       /**
+        * Archive Header Parts
+        */
 
-      // Title
-     the_archive_title( '<h1 class="page-title">', '</h1>' );
+        // Title
+       the_archive_title( '<h1 class="page-title">', '</h1>' );
 
-     // Description
-     the_archive_description( '<div class="archive-description">', '</div>' );
+       // Description
+       the_archive_description( '<div class="archive-description">', '</div>' );
+     }
    }
    if( ! function_exists( 'adco_general_header' ) ) {
      function adco_general_header() {
@@ -199,10 +205,14 @@
    }
    if( ! function_exists( 'adco_content' ) ) {
      function adco_content() {
-       /**
-        * Loop Content
-        */
-        the_content();
+     /**
+      * Loop Content
+      */
+      ?>
+        <div class="container">
+          <?php echo the_content(); ?>
+        </div>
+      <?php
      }
    }
 
@@ -234,10 +244,12 @@
       }
     }
     if( ! function_exists( 'adco_archive_item' ) ) {
-      /**
-       * Get Archive Item
-       */
-       adco_get_template( 'adco-archive-item.php' );
+      function adco_archive_item() {
+        /**
+         * Get Archive Item
+         */
+         adco_get_template( 'adco-archive-item.php' );
+      }
     }
     if( ! function_exists( 'adco_sidebar' ) ) {
       function adco_sidebar() {

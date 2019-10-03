@@ -16,8 +16,10 @@
   * Options
   */
   $internal = get_option( 'internal' );
+  $lin1 = $internal['linear-gradient-1'];
+  $lin2 = $internal['linear-gradient-2'];
+  $bg = $internal['blog-bg'];
   ?>
-  <div class="general header" style="linear-gradient( to right, <?php echo $internal['linear-gradient-1']; ?>, <?php echo $internal['linear-gradient-2']; ?> ), url(<?php echo $internal['blog-bg']; ?>);">
+  <div class="general header" style="linear-gradient( to right, <?php echo $lin1; ?>, <?php echo $lin2; ?>), url(<?php echo $bg; ?>);">
     <h1><?php echo $internal['blog-title']; ?></h1>
   </div>
- 

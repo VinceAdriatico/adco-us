@@ -48,12 +48,12 @@
        */
        $adco = get_template_directory() . '/js/adco.js';
        $import = get_template_directory() . '/js/import.js';
-       $materialize = get_template_directory() . '/materialize/js/materialize.js';
+       $materialize = get_template_directory() . '/materialize/js/materialize.min.js';
        $slick = get_template_directory() . '/slick/slick.js';
 
-       $minifier = new Minify\JS( $adco );
+       $minifier = new Minify\JS( $materialize );
        $minifier->add( $import );
-       $minifier->add( $materialize ); 
+       $minifier->add( $adco );
        $minifier->add( $slick );
        $minifier->minify( $minifiedpath );
     }

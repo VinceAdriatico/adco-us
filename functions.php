@@ -177,7 +177,9 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  	wp_dequeue_style( 'adco-style' );
  	wp_deregister_style( 'adco-style');
 
- 	wp_enqueue_script( 'jquery' );
+ 	wp_dequeue_script( 'jquery' );
+	wp_register_script( 'jquery-3', get_template_directory_uri() . '/js/jquery.min.js', array(), '3.2.1', false );
+	wp_enqueue_script( 'jquery-3' );
  	wp_enqueue_script( 'jquery-migrate' );
 
  	// Include Minified CLass
@@ -191,8 +193,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  	wp_register_style( 'minify-css', get_template_directory_uri() . '/css/minified.css', array(), '1.0.0', false );
  	wp_enqueue_style( 'minify-css' );
 
+	// Material Icons
+	wp_register_style( 'material-icons', "https://fonts.googleapis.com/icon?family=Material+Icons", array(), '', false );
+	wp_enqueue_style( 'material-icons' );
+
  	// Minify Script
- 	wp_register_script( 'minify', get_template_directory_uri() . '/js/minified.js', 'jquery', '1.0.0', false );
+ 	wp_register_script( 'minify', get_template_directory_uri() . '/js/minified.js', 'jquery', '1.0.0', true );
  	wp_enqueue_script( 'minify' );
  }
  add_action( 'wp_enqueue_scripts', 'minified' );

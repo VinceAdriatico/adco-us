@@ -38,16 +38,25 @@
      ?>
     	<header id="masthead" class="site-header">
     		<nav id="site-navigation" class="main-navigation">
-    			<a href="<?php get_home_url(); ?>" class="brand-logo">
-    				<img src="<?php echo esc_url( $general['logo_svg'] ); ?>" alt="<?php echo get_bloginfo('display'); ?>" />
-    			</a>
-    			<?php
-    			wp_nav_menu( array(
-    				'theme_location' => 'primary',
-    				'menu_id'        => 'nav-mobile',
-    				'menu_class'		 => 'right hide-on-med-and-down'
-    			) );
-    			?>
+          <div class="nav-wrapper">
+            <a href="<?php echo get_home_url(); ?>" class="brand-logo">
+      				<img src="<?php echo esc_url( $general['logo_svg'] ); ?>" alt="<?php echo get_bloginfo('display'); ?>" />
+      			</a>
+            <a  href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
+      			<?php
+      			wp_nav_menu( array(
+      				'theme_location' => 'primary',
+      				'container'      => 'ul',
+      				'menu_class'		 => 'right hide-on-med-and-down'
+      			) );
+            wp_nav_menu( array(
+              'theme_location'    => 'primary',
+              'container'         => 'ul',
+              'menu_class'        => 'side-nav',
+              'menu_id'           => 'mobile-menu'
+            ) );
+            ?>
+          </div>
     		</nav><!-- #site-navigation -->
     	</header><!-- #masthead -->
     <?php

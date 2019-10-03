@@ -54,18 +54,21 @@
      * Blog Page
      */
      add_action( 'before_blog_page_loop', 'adco_blog_header', 5 );
-     add_action( 'blog_page_item', 'adco_open_archive', 5 );
-     add_action( 'blog_page_item', 'adco_blog_item', 10 );
-     add_action( 'blog_page_item', 'adco_close_archive', 15 );
+     add_action( 'blog_page_item', 'adco_breadcrumbs', 5 );
+     add_action( 'blog_page_item', 'adco_open_archive', 10 );
+     add_action( 'blog_page_item', 'adco_blog_item', 15 );
+     add_action( 'blog_page_item', 'adco_close_archive', 20 );
+     add_actioN( 'before_blog_page_loop', 'acdo_blog_header' )
 
      /**
       * Archive Page
       */
       add_action( 'before_archive_page_loop', 'adco_archive_header', 5 );
-      add_action( 'archive_page_item', 'adco_open_archive', 5 );
-      add_action( 'archive_page_item', 'adco_archive_item', 10 );
-      add_action( 'archive_page_item', 'adco_close_archive', 15 );
-      add_action( 'after_archive_page_item', 'adco_sidebar', 5 );
+      add_action( 'before_archive_page_loop', 'adco_breadcrumbs', 5 );
+      add_action( 'before_archive_page_loop', 'adco_open_archive', 10 );
+      add_action( 'archive_page_item', 'adco_archive_item', 15 );
+      add_action( 'after_archive_page_loop', 'adco_close_archive', 5 );
+      add_action( 'after_archive_page_loop', 'adco_sidebar', 10 );
 
       /**
        * 404 Page

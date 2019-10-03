@@ -53,7 +53,7 @@
 				/**
 				 * Archive Page Item
 				 */
-				 do_action( 'archive_page_item' ):
+				 do_action( 'archive_page_item' );
 
 			 /**
 			  * After Archive Page Item

@@ -50,7 +50,7 @@
        * General
        */
        register_setting( 'acdo_main', 'general' );
-       register_setting( 'adco_main', 'internal' ):
+       register_setting( 'adco_main', 'internal' );
        register_setting( 'adco_main', 'footer' );
     }
 
@@ -130,7 +130,7 @@
 
                <tr valign="top">
                  <th scope="row">404 Background</th>
-                 <td><input type="url" name="internal[error-bg]" value="<?php echo esc_url( $internl['error-bg'] ); ?>" /></td>
+                 <td><input type="url" name="internal[error-bg]" value="<?php echo esc_url( $internal['error-bg'] ); ?>" /></td>
                </tr>
 
                <tr valign="top">

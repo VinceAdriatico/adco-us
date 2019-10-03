@@ -17,6 +17,6 @@
    */
    $internal = get_option( 'internal' );
    ?>
-   <div class="general header" style="linear-gradient( to right, <?php echo $internal['linear-gradient-1']; ?>, <?php echo $internal['linear-gradient-2']; ?> ), url(<?php echo $internal['blog-bg']; ?>);">
+   <div class="general header" style="background-image: linear-gradient( to right, <?php echo $internal['linear-gradient-1']; ?>, <?php echo $internal['linear-gradient-2']; ?> ), url(<?php echo $internal['blog-bg']; ?>);">
      <?php adco_archive_title(); ?>
    </div>

@@ -13,15 +13,14 @@
  }
 
  ?>
-<nav>
+<nav class="breadcrumbs">
   <div class="nav-wrapper">
     <div class="col s12">
       <?php
-        if( ! function_exists( 'yoast_breadcrumb' ) ) {
+        if( function_exists( 'yoast_breadcrumb' ) ) {
           yoast_breadcrumb( '<p id="breadcrumbs">', '</p>' );
         } else {
-          // No Breadcrumbs Found
-          echo '<h1>No Yoast Breadcrumbs</h1>';
+          the_breadcrumb();
         }
         ?>
     </div>

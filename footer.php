@@ -27,7 +27,7 @@
 			<div class="row">
 				<div class="col l6 s12">
 					<h5 class="white-text"><?php echo esc_attr( $footer['title'] ); ?></h5>
-					<p class="grey-text' text-lighten-4"><?php echo esc_attr( $footer['content'] ); ?></p>
+					<p class="grey-text text-lighten-4"><?php echo esc_attr( $footer['content'] ); ?></p>
 				</div>
 				<div class="col l4 offset-l2 s12">
 					<?php

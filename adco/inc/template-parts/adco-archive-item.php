@@ -22,7 +22,19 @@
 
 
 ?>
-<li>
-  <img src="<?php echo $img; ?>" alt="<?php echo $alt; ?>" />
-  <p><?php echo get_the_excerpt(); ?></p>
-</li>
+<article id="<?php echo get_the_ID(); ?>" class="col s12 m7">
+  <div class="card horizontal">
+    <div class="card-image">
+      <img src="<?php echo $img; ?>" alt="<?php echo $alt; ?>" />
+    </div>
+    <div class="card-stacked">
+      <div class="card-content">
+        <h5><?php echo $title; ?></h5>
+        <p><?php echo get_the_excerpt(); ?></p>
+      </div>
+      <div class="card-action">
+        <a href="<?php echo get_the_permalink(); ?>" title="<?php echo get_the_title(); ?>" class="grey-text text-lighten-4">Read More</a>
+      </div>
+    </div>
+  </div>
+</article>

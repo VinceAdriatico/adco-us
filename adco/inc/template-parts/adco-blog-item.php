@@ -22,21 +22,19 @@
 
 
 ?>
-<li>
-  <div class="row">
-    <div class="col s12 m7">
-      <div class="card">
-        <div class="card-image">
-          <img src="<?php echo $img; ?>" alt="<?php echo $alt; ?>">
-          <span class="card-title"><h5><?php echo get_the_title(); ?></h5></span>
-        </div>
-        <div class="card-content">
-          <p><?php echo adco_short_content(); ?></p>
-        </div>
-        <div class="card-action">
-          <a href="<?php echo get_the_permalink(); ?>" title="<?php echo $title; ?>" rel="<?php echo $title; ?>">Read More</a>
-        </div>
+<article id="<?php echo get_the_id(); ?>" class="row">
+  <div class="col s12 m7">
+    <div class="card">
+      <div class="card-image">
+        <img src="<?php echo $img; ?>" alt="<?php echo $alt; ?>">
+        <span class="card-title"><h5><?php echo get_the_title(); ?></h5></span>
+      </div>
+      <div class="card-content">
+        <p><?php echo adco_short_content(); ?></p>
+      </div>
+      <div class="card-action">
+        <a href="<?php echo get_the_permalink(); ?>" title="<?php echo $title; ?>" rel="<?php echo $title; ?>">Read More</a>
       </div>
     </div>
   </div>
-</li>
+</article>
