@@ -112,9 +112,149 @@
     }
   }
 
+  /**
+   * Generated Parts
+   */
+   if( ! function_exists( 'adco_error_header' ) ) {
+     function adco_error_header() {
+       $content = '';
+       /**
+        * Options
+        */
+        $internal = get_option( 'internal' );
+        $bg = $internal['error-bg'];
+        $title = $internal['error-title'];
+        $home = get_home_url();
+        $company = get_bloginfo('display');
+
+        // Parts
+        $open = "<div class='general header' style='background-image: linear-gradient( to right, $internal['linear-gradient-1'], $internal['linear-gradient-2'] ), url($bg);'>";
+        $title = "<h1>$title</h1>";
+        $link = "<a href='$home' title='$company' rel='home'>Go to Home</a>";
+
+        // Concatenate Parts
+        $content .= $open .= $title .= $link .= '</div>';
+
+        echo $content;
+     }
+   }
+   if( ! function_exists( 'adco_open_archive' ) ) {
+     $content = '';
+     if( is_page_template( 'home' ) ) {
+       $class = 'home';
+     } else {
+       $class = 'archive';
+     }
+     $open = "<ul class='$class'>";
+
+     // Concatenate
+     $content .= $open;
+
+     echo $content;
+   }
+   if( ! function_exists( 'adco_close_archive' ) ) {
+     function adco_close_archive() {
+       $content = '';
+       $close = '</ul>';
+
+       // Concatenate
+       $content .= $close;
+
+       echo $content;
+     }
+   }
+   if( ! function_exists( 'adco_archive_title' ) ) {
+     /**
+      * Archive Header Parts
+      */
+
+      // Title
+     the_archive_title( '<h1 class="page-title">', '</h1>' );
+
+     // Description
+     the_archive_description( '<div class="archive-description">', '</div>' );
+   }
+   if( ! function_exists( 'adco_general_header' ) ) {
+     function adco_general_header() {
+       $content = '';
+       /**
+        * Options
+        */
+        $title = get_the_title();
+        $bg = get_the_post_thumbnail_url();
+        $gra = get_option( 'internal' );
+        $first = $gra['linear-gradient-1'];
+        $second = $gra['linear-gradient-2'];
+
+        // Parts
+        $open = "<div class='general header' style='background-image: linear-gradient(to right, $first, $second ), url( $bg );'>";
+        $titlet = "<h1>$title</h1>";
+        $close = "</div>";
+
+        // Concatenate Parts
+        $content .= $open .= $titlet .= $close;
+
+       echo $content;
+     }
+   }
+   if( ! function_exists( 'adco_content' ) ) {
+     function adco_content() {
+       /**
+        * Loop Content
+        */
+        the_content();
+     }
+   }
+
    /**
     * Template Parts
     */
+    if( ! function_exists( 'adco_archive_header' ) ) {
+      function adco_archive_header() {
+        /**
+         * Get Archive Header
+         */
+         adco_get_template( 'adco-archive-header.php' );
+      }
+    }
+    if( ! function_exists( 'adco_blog_header' ) ) {
+      function adco_blog_header() {
+        /**
+         * Get Blog Header
+         */
+         adco_get_template( 'adco-blog-header.php' );
+      }
+    }
+    if( ! function_exists( 'adco_blog_item' ) ) {
+      function adco_blog_item() {
+        /**
+         * Get Blog Item
+         */
+         adco_get_template( 'adco-blog-item.php' );
+      }
+    }
+    if( ! function_exists( 'adco_archive_item' ) ) {
+      /**
+       * Get Archive Item
+       */
+       adco_get_template( 'adco-archive-item.php' );
+    }
+    if( ! function_exists( 'adco_sidebar' ) ) {
+      function adco_sidebar() {
+        /**
+         * Get Sidebar
+         */
+         get_sidebar();
+      }
+    }
+    if( ! function_exists( 'adco_breadcrumbs' ) ) {
+      function adco_breadcrumbs() {
+        /**
+         * Get Breadcrumbs
+         */
+         adco_get_template( 'adco-breadcrumbs.php' );
+      }
+    }
     if( ! function_exists( 'adco_hero_banner' ) ) {
       function adco_hero_banner() {
         /**

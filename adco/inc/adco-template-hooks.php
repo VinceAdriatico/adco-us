@@ -33,3 +33,41 @@
   add_action( 'main_content', 'adco_about_section', 30 );
   add_action( 'main_content', 'adco_theme_section', 35 );
   add_action( 'main_content', 'adco_contact_modal', 40 );
+
+  /**
+   * Default Page Content
+   */
+   add_action( 'default_page_content', 'adco_general_header', 5 );
+   add_action( 'default_page_content', 'adco_breadcrumbs', 10 );
+   add_action( 'default_page_content', 'adco_content', 15 );
+   add_action( 'default_page_content', 'adco_sidebar', 20 );
+
+   /**
+    * Single Post
+    */
+    add_action( 'content_single_post', 'adco_general_header', 5 );
+    add_action( 'content_single_post', 'adco_breadcrumbs', 10 );
+    add_action( 'content_single_post', 'adco_content', 15 );
+    add_action( 'content_single_post', 'adco_sidebar', 20 );
+
+    /**
+     * Blog Page
+     */
+     add_action( 'before_blog_page_loop', 'adco_blog_header', 5 );
+     add_action( 'blog_page_item', 'adco_open_archive', 5 );
+     add_action( 'blog_page_item', 'adco_blog_item', 10 );
+     add_action( 'blog_page_item', 'adco_close_archive', 15 );
+
+     /**
+      * Archive Page
+      */
+      add_action( 'before_archive_page_loop', 'adco_archive_header', 5 );
+      add_action( 'archive_page_item', 'adco_open_archive', 5 );
+      add_action( 'archive_page_item', 'adco_archive_item', 10 );
+      add_action( 'archive_page_item', 'adco_close_archive', 15 );
+      add_action( 'after_archive_page_item', 'adco_sidebar', 5 );
+
+      /**
+       * 404 Page
+       */
+       add_action( 'error_page', 'adco_error_header', 5 );

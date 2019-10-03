@@ -46,8 +46,8 @@
       'name'          => esc_html__( 'Default Sidebar', 'adco' ),
       'id'            => 'default-sidebar',
       'description'    => esc_html__( 'Add Widgets here', 'adco' ),
-      'before_widget' => '<section id="%1$s" class="widget %2$s">',
-   		'after_widget'  => '</section>',
+      'before_widget' => '<div id="%1$s" class="collection widget %2$s">',
+   		'after_widget'  => '</div>',
    		'before_title'  => '<h2 class="widget-title">',
    		'after_title'   => '</h2>',
     ) );

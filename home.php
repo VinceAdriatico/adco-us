@@ -23,7 +23,7 @@
     *
     * @action_hook before_archive_page_main
     */
-    do_action( 'before_archive_page_main' );
+    do_action( 'before_blog_page_main' );
 
     /**
      * Check if any posts
@@ -55,13 +55,13 @@
          * @action_hook before_archive_page_item
          *
          */
-         do_action( 'before_archive_page_item' );
+         do_action( 'before_blog_page_item' );
 
 
          /**
           * Archive Page Item
           */
-          do_action( 'archive_page_item' );
+          do_action( 'blog_page_item' );
 
         /**
          * After Archive Page Item
@@ -69,7 +69,7 @@
          * @action_hook after_archive_page_item
          *
          */
-         do_action( 'after_archive_page_item' );
+         do_action( 'after_blog_page_item' );
 
         endwhile; // End the Loop
 
@@ -107,7 +107,7 @@
     * @action_hook after_no_posts
     *
     */
-    do_action( 'after_no_posts', $sidebar );
+    do_action( 'after_no_posts' );
 
     endif;
 

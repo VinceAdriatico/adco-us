@@ -39,22 +39,10 @@
  		<main id="main" class="site-main default-page-container">
 
  		<?php
- 			/**
- 			 * Before Default Page Content
- 			 *
- 			 * @action_hook before_default_page_content
- 			 *
- 			 * @hooked single_post_open() - 5
- 			 */
- 			 do_action( 'before_default_page_content' );
-
-
- 		/**
- 		 * Afer Default Page Content
- 		 *
- 		 * @action_hook after_default_page_content
- 		 */
- 		 do_action( 'after_default_page_content' );
+    /**
+     * Default Page Content
+     */
+     do_action( 'default_page_content' );
  		?>
 
  		</main><!-- #main -->

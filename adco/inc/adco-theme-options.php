@@ -50,6 +50,7 @@
        * General
        */
        register_setting( 'acdo_main', 'general' );
+       register_setting( 'adco_main', 'internal' ):
        register_setting( 'adco_main', 'footer' );
     }
 
@@ -74,6 +75,7 @@
              do_settings_sections( 'adco_main' );
 
              $general = get_option( 'general' );
+             $internal = get_option( 'internal' );
              $footer = get_option( 'footer' );
              ?>
              <table class="form-table">
@@ -95,6 +97,45 @@
                <tr valign="top">
                  <th scope="row">E-Mail</th>
                  <td><input type="text" name="general[email]" value="<?php echo esc_attr( $general['email'] ); ?>" /></td>
+               </tr>
+
+               <tr valign="top">
+                 <th scope="row"><h1>Internal</h1>
+               </tr>
+
+               <tr valign="top">
+                 <th scope="row">Linear Gradient 1</th>
+                 <td><input type="text" name="internal[linear-gradient-1]" value="<?php echo esc_attr( $internal['linear-gradient-1'] ); ?>" /></td>
+               </tr>
+
+               <tr valign="top">
+                 <th scope="row">Linear Gradient 2</th>
+                 <td><input type="text" name="internal[linear-gradient-2]" value="<?php echo esc_attr( $internal['linear-gradient-2'] ); ?>" /></td>
+               </tr>
+
+               <tr valign="top">
+                 <th scope="row">Blog Title</th>
+                 <td><input type="text" name="internal[blog-title]" value="<?php echo esc_attr( $internal['blog-title'] ); ?>" /></td>
+               </tr>
+
+               <tr valign="top">
+                 <th scope="row">Blog Background</th>
+                 <td><input type="url" name="internal[blog-bg]" value="<?php echo esc_url( $internal['blog-bg'] ); ?>" /></td>
+               </tr>
+
+               <tr valign="top">
+                 <th scope="row">Archive Background</th>
+                 <td><input type="url" name="internal[archive-bg]" value="<?php echo esc_url( $internal['archive-bg'] ); ?>" /></td>
+               </tr>
+
+               <tr valign="top">
+                 <th scope="row">404 Background</th>
+                 <td><input type="url" name="internal[error-bg]" value="<?php echo esc_url( $internl['error-bg'] ); ?>" /></td>
+               </tr>
+
+               <tr valign="top">
+                 <th scope="row">404 Text</th>
+                 <td><input type="text" name="internal[error-title]" value="<?php echo esc_attr( $internal['error-title'] ); ?>" /></td>
                </tr>
 
                <tr valign="top">
