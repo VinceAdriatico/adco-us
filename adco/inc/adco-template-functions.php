@@ -183,7 +183,7 @@
         /**
          * Get Process Section Configuration
          */
-         adco_get_template( 'config/config-process-section.php' );
+         adco_get_template( 'config/config-adco-process-section.php' );
       }
     }
 

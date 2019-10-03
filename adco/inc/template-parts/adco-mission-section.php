@@ -15,10 +15,10 @@
  /**
   * Options
   */
-  $option = get_option( 'adco-mission-section' );
+  $mission = get_option( 'adco-mission-section' );
 ?>
 <section class="home-section mission">
-  <h1><?php echo esc_attr( $option['title'] ); ?></h1>
-  <h5><?php echo esc_attr( $option['subtitle'] ); ?></h5>
-  <p><?php echo esc_attr( $option['content'] ); ?></p>
+  <h1><?php echo esc_attr( $mission['title'] ); ?></h1>
+  <sub><?php echo esc_attr( $mission['subtitle'] ); ?></sub>
+  <p><?php echo esc_attr( $mission['content'] ); ?></p>
 </section>

@@ -8,15 +8,15 @@
  * @package adco
  */
 
- if( ! defined( 'ABSPATH' ) ) {
-   exit;
- }
+if( ! defined( 'ABSPATH' ) ) {
+  exit;
+}
 
  /**
   * Options
   */
   $option = get_option( 'adco-process-section' );
-  $post = $option['post_type'];
+  $postype = esc_attr( $option['post_type'] );
 
   /**
    * WP Query
@@ -24,9 +24,10 @@
 
    // Arguments
    $args = array(
-     'post_type'  => $post,
-     'order'      => 'DESC',
-     'orderby'    => 'menu_order'
+     'post_type'      => $postype,
+     'order'          => 'DESC',
+     'orderby'        => 'menu_order',
+     'posts_per_page' => 3
    );
 
    // Query

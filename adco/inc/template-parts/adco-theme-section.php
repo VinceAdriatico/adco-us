@@ -16,7 +16,7 @@
  * Options
  */
  $option = get_option( 'adco-theme-section' );
- $company = get_bloginfo( 'display' ):
+ $company = get_bloginfo( 'display' );
 
  // Parts
  $link = $option['link'];

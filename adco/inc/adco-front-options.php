@@ -61,15 +61,7 @@
         do_settings_sections( 'adco-front' );
 
         // Display Front Page Setttings
-        adco_hero_banner_config();
-        adco_product_section_config();
-        adco_mission_section_config();
-        adco_process_section_config();
-        adco_cta_1_config();
-        adco_about_section_config();
-        adco_theme_section_config();
-        adco_contact_modal_config();
-
+        do_action( 'admin_main_content' );
 
         /**
          * Submit Form
