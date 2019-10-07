@@ -16,16 +16,22 @@
   * Options
   */
   $title = get_the_title();
-  $img = get_the_post_thumbnail_url();
   $id = get_post_thumbnail_id( $post->ID );
   $alt = get_post_meta( $id, '_wp_attachment_image_alt', true );
 
+  $thumb = $int['thumb'];
+
+  if( has_post_thumbnail() ) {
+    $image = get_the_post_thumbnail_url();
+  } else {
+    $image = $thumb;
+  }
 
 ?>
 <article id="<?php echo get_the_ID(); ?>" class="col s12 m7">
   <div class="card horizontal">
     <div class="card-image">
-      <img src="<?php echo $img; ?>" alt="<?php echo $alt; ?>" />
+      <img src="<?php echo $image; ?>" alt="<?php echo $alt; ?>" />
     </div>
     <div class="card-stacked">
       <div class="card-content">

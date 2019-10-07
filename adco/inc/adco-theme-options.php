@@ -47,7 +47,7 @@
     */
     function adco_theme_settings() {
       /**
-       * General
+       * Registered Settings
        */
        register_setting( 'acdo_main', 'general' );
        register_setting( 'adco_main', 'internal' );
@@ -90,6 +90,11 @@
                </tr>
 
                <tr valign="top">
+                 <th scope="row">Default Image</th>
+                 <td><input type="url" name="general[thumbnail]" value="<?php echo esc_url( $general['thumbnail'] ); ?>" /></td>
+               </tr>
+
+               <tr valign="top">
                  <th scope="row">Phone</th>
                  <td><input type="text" name="general[phone]" value="<?php echo esc_attr( $general['phone'] ); ?>" /></td>
                </tr>
@@ -101,6 +106,11 @@
 
                <tr valign="top">
                  <th scope="row"><h1>Internal</h1>
+               </tr>
+
+               <tr valign="top">
+                 <th scope="row">Default Thumbnail</th>
+                 <td><input type="url" name="internal[thumb]" value="<?php echo esc_url( $internal['thumb'] ); ?>" /></td>
                </tr>
 
                <tr valign="top">
@@ -131,6 +141,11 @@
                <tr valign="top">
                  <th scope="row">404 Background</th>
                  <td><input type="url" name="internal[error-bg]" value="<?php echo esc_url( $internal['error-bg'] ); ?>" /></td>
+               </tr>
+
+               <tr valign="top">
+                 <th scope="row">Search Background</th>
+                 <td><input type="url" name="internal[search-bg]" value="<?php echo esc_url( $internal['search-bg'] ); ?>" /></td>
                </tr>
 
                <tr valign="top">

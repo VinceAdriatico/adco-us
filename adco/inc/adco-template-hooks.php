@@ -47,17 +47,19 @@
     */
     add_action( 'content_single_post', 'adco_general_header', 5 );
     add_action( 'content_single_post', 'adco_breadcrumbs', 10 );
-    add_action( 'content_single_post', 'adco_content', 15 );
-    add_action( 'content_single_post', 'adco_sidebar', 20 );
+    add_action( 'content_singel_post', 'adco_open_post', 15 );
+    add_action( 'content_single_post', 'adco_content', 20 );
+    // add_action( 'content_single_post', 'adco_sidebar', 25 );
+    add_action( 'content_single_post', 'adco_close_post', 30 );
 
     /**
      * Blog Page
      */
      add_action( 'before_blog_page_loop', 'adco_blog_header', 5 );
      add_action( 'before_blog_page_loop', 'adco_breadcrumbs', 5 );
-     add_action( 'blog_page_item', 'adco_open_archive', 10 );
+     add_action( 'before_blog_page_loop', 'adco_open_archive', 15 );
      add_action( 'blog_page_item', 'adco_blog_item', 15 );
-     add_action( 'blog_page_item', 'adco_close_archive', 20 );
+     add_action( 'after_blog_page_loop', 'adco_close_archive', 20 );
 
      /**
       * Archive Page
@@ -68,6 +70,12 @@
       add_action( 'archive_page_item', 'adco_archive_item', 15 );
       add_action( 'after_archive_page_loop', 'adco_close_archive', 5 );
       add_action( 'after_archive_page_loop', 'adco_sidebar', 10 );
+
+      /**
+       * Search Page
+       */
+       add_action( 'before_search_page_loop', 'adco_open_archive', 5 );
+       add_action( 'aftter_search_page_loop', 'adco_close_archive', 5 );
 
       /**
        * 404 Page

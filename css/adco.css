@@ -60,6 +60,7 @@
 
  h1, h2, h3, h4, h5, h6 {
    font-family: "Montserrat Bold", "Helvetica", "Arial", sans-serif;
+   word-break: break-word;
  }
  body, p {
    font-family: "Open Regular", "Helvetica", "Arial", sans-serif;
@@ -91,8 +92,9 @@
   */
   .general.header {
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     color: white;
     padding: 3rem 3rem 3rem 1rem;
   }
@@ -101,8 +103,14 @@
   }
   .breadcrumbs {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+  }
+  .site-content {
+    margin: 0 auto 2rem;
+  }
+  .site-content .widget-area {
+    padding: 2rem;
   }
 
   /*--- Archive Page ---*/
@@ -121,4 +129,32 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+  }
+
+  /**
+   * Tablet
+   */
+  @media screen and (min-width: 770px) {
+    .search .site-content {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+    .site-content .widget-area {
+      padding-top: 2rem;
+    }
+
+    /**
+     * Blog Page
+     */
+     .blog .archive {
+       display: flex;
+       align-items: flex-start;
+       justify-content: flex-start;
+       flex-wrap: wrap;
+       padding: 0 10vw;
+     }
+     .blog .archive article {
+       flex: 0 0 33%;
+     }
   }

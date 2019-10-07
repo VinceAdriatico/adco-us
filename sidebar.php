@@ -7,11 +7,14 @@
  * @package adco
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	return;
-}
 ?>
 
-<aside id="secondary" class="widget-area">
-	<?php dynamic_sidebar( 'default-sidebar' ); ?>
+<aside id="secondary" class="widget-area  blue-grey darken-1">
+	<?php
+	if( is_active_sidebar( 'sidebar-1' ) ):
+			dynamic_sidebar( 'sidebar-1' );
+		else:
+			echo '<h5 class="no-posts">No widgets found in <span>Widget -> Sidebar/span>.</h5>';
+		endif;
+		?>
 </aside><!-- #secondary -->

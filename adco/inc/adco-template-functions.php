@@ -140,6 +140,28 @@
         echo $content;
      }
    }
+   if( ! function_exists( 'adco_open_post' ) ) {
+     function adco_open_post() {
+       $content = '';
+       $open = "<div class='post-container'><h1>Testing</h1>";
+
+       // Concatenate
+       $content .= $open;
+
+       echo $content;
+     }
+   }
+   if( ! function_exists( 'adco_close_post' ) ) {
+     function adco_close_post() {
+       $content = '';
+       $open = '</div>';
+
+       // Concatenate
+       $content .= $open;
+
+       echo $content;
+     }
+   }
    if( ! function_exists( 'adco_open_archive' ) ) {
      function adco_open_archive() {
        $content = '';
