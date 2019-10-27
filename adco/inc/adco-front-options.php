@@ -35,12 +35,14 @@
      */
      register_setting( 'adco-front', 'adco-hero-banner' );
      register_setting( 'adco-front', 'adco-product-section' );
-     register_setting( 'adco-front', 'adco-mission-section' );
-     register_setting( 'adco-front', 'adco-process-section' );
-     register_setting( 'adco-front', 'adco-cta-1' );
+     // register_setting( 'adco-front', 'adco-mission-section' );
+     // register_setting( 'adco-front', 'adco-process-section' );
+     // register_setting( 'adco-front', 'adco-cta-1' );
      register_setting( 'adco-front', 'adco-about-section' );
+     register_setting( 'adco-front', 'adco-feature-section' ); 
      register_setting( 'adco-front', 'adco-theme-section' );
-     register_setting( 'adco-front', 'adco-contact-modal' );
+     register_setting( 'adco-front', 'adco-contact-section' );
+     // register_setting( 'adco-front', 'adco-contact-modal' );
   }
 
   /**

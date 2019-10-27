@@ -115,6 +115,20 @@
   /**
    * Generated Parts
    */
+   if( ! function_exists( 'adco_container_wrap' ) ) {
+     function adco_container_wrap() {
+       $content = "<div class='wrap'>";
+
+       echo $content;
+     }
+   }
+   if( ! function_exists( 'adco_container_close') ) {
+     function adco_container_close() {
+       $content = '</div>';
+
+       echo $content;
+     }
+   }
    if( ! function_exists( 'adco_error_header' ) ) {
      function adco_error_header() {
        $content = '';
@@ -241,6 +255,22 @@
    /**
     * Template Parts
     */
+    if( ! function_exists( 'adco_inline_jquery' ) ) {
+      function adco_inline_jquery() {
+        /**
+         * Get Inline CSS
+         */
+         adco_get_template( 'adco-inline-jquery.php' );
+      }
+    }
+    if( ! function_exists( 'adco_inline_css' ) ) {
+      function adco_inline_css() {
+        /**
+         * Get Inline CSS
+         */
+         adco_get_template( 'adco-inline-css.php' );
+      }
+    }
     if( ! function_exists( 'adco_archive_header' ) ) {
       function adco_archive_header() {
         /**
@@ -287,6 +317,22 @@
          * Get Breadcrumbs
          */
          adco_get_template( 'adco-breadcrumbs.php' );
+      }
+    }
+    if( ! function_exists( 'adco_feature_section' ) ) {
+      function adco_feature_section() {
+        /**
+         * Get Product Section
+         */
+         adco_get_template( 'adco-feature-section.php' );
+      }
+    }
+    if( ! function_exists( 'adco_feature_section_config' ) ) {
+      function adco_feature_section_config() {
+        /**
+         * Get Product Section
+         */
+         adco_get_template( 'config/config-adco-feature-section.php' );
       }
     }
     if( ! function_exists( 'adco_hero_banner' ) ) {
@@ -412,6 +458,24 @@
          * Get Theme Section Configuration
          */
          adco_get_template( 'config/config-adco-theme-section.php' );
+      }
+    }
+
+    if( ! function_exists( 'adco_contact_section' ) ) {
+      function adco_contact_section() {
+        /**
+         * Get Contact Modal
+         */
+         adco_get_template( 'adco-contact-section.php' );
+      }
+    }
+    // Configuration File
+    if( ! function_exists( 'adco_contact_section_config' ) ) {
+      function adco_contact_section_config() {
+        /**
+         * Get Contact Modal Configuration
+         */
+         adco_get_template( 'config/config-adco-contact-section.php' );
       }
     }
 

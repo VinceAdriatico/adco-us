@@ -15,8 +15,10 @@
 /**
  * Options
  */
+ $internal = get_option( 'internal' );
  $product = get_option( 'adco-product-section' );
  $post = esc_attr( $product['post_type'] );
+ $thumbnail = $internal['thumb'];
 
  /**
   * WP_Query
@@ -33,11 +35,11 @@
   // Query
   $query = new WP_Query( $args );
   ?>
-  <section class="home-section product">
-    <h1><?php echo esc_attr( $product['title'] ); ?></h1>
-    <p><?php echo esc_attr( $product['subtitle'] ); ?></td>
+  <section class="home-section product contain">
+    <h1 class="title"><?php echo esc_attr( $product['title'] ); ?></h1>
+    <p class="subtitle"><?php echo esc_attr( $product['subtitle'] ); ?></td>
     <?php if( $query->have_posts() ) {
-      echo '<ul>';
+      echo '<div class="slick-main">';
       while( $query->have_posts() ) {
         $query->the_post();
         /**
@@ -46,11 +48,16 @@
          $id = get_the_ID();
          $cta = get_post_meta( $id, '_page', true );
          $link = get_the_permalink( $cta );
+         $feat = get_the_post_thumbnail_url();
+         if( $feat == '' ) {
+           $image = $thumbnail;
+         } else {
+           $image = $feat;
+         }
         ?>
-        <li>
-          <div class="card">
+          <div class="card product">
             <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="<?php echo get_the_post_thumbnail_url(); ?>" />
+              <img class="activator" src="<?php echo $image; ?>" />
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4"><?php echo get_the_title(); ?><i class="material-icons right">more_vert</i></span>
@@ -61,10 +68,9 @@
               <p><?php echo get_the_excerpt(); ?></p>
             </div>
           </div>
-        </li>
       <?php
       } wp_reset_postdata();
-      echo '</ul>';
+      echo '</div>';
     } else {
       echo "<h1>No $post Found</h1>";
     }

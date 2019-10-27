@@ -102,6 +102,112 @@
  }
  add_action( 'admin_enqueue_scripts', 'admin_core_files' );
 
+/**
+ * Initialize custom post type for Company Features
+ */
+ function latest_projects() {
+   $args = array(
+     'label'            => 'Latest Projects',
+     'public'           => true,
+     'show_ui'          => true,
+     'show_in_menu'     => 'adco_options',
+     'has_archive'      => true,
+     'hierarchical'     => false,
+     'rewrite'          => array( 'slug'  => 'latest-project' ),
+     'query_var'        => true,
+     'menu_icon'        => 'dashicons-images-alt',
+     'supports'         => array(
+       'title',
+       'editor',
+       'excerpt',
+       'thumbnail',
+       'page-attributes', ) );
+     register_post_type( 'latest_project', $args );
+ }
+ add_action( 'init', 'latest_projects' );
+
+ /**
+  * Add Post Meta for Latest Projects
+  */
+  function add_post_meta_projects() {
+    add_meta_box(
+      'latest_projects_meta',       // ID of Metabox
+      'Additional',               // TItle of Metabox
+      'run_project_meta',         // Callback
+      'latest_project',             // Type of Post
+      'side',                     // Location on Page
+      'high'                       // Priority
+    );
+  }
+  add_action( 'add_meta_boxes', 'add_post_meta_projects' );
+
+  function run_project_meta( $post ) {
+    /**
+     * Create Nonce
+     */
+     wp_nonce_field( basename(__FILE__), 'meta_box_project_nonce' );
+
+     /**
+      * Get Post Meta
+      */
+      $cta = get_post_meta( $post->ID, '_page', true );
+      $external = get_post_meta( $post->ID, '_external', true );
+
+      $pages = get_pages();
+      ?>
+      <div class="inside">
+        <fieldset>
+          <legend>CTA Page</legend>
+          <select name="page" style="width: 100%">
+            <?php
+            foreach( $pages as $page ) { ?>
+            <option value="<?php echo $page->ID; ?>" <?php selected( $cta, $page->ID ); ?>>
+              <?php echo $page->post_title; ?>
+            </option>
+            <?php
+              }
+            ?>
+          </select>
+          <legend>External Page</legend>
+          <input type="url" name="external" value="<?php echo esc_url( $external ); ?>" />
+        </fieldset>
+      </div>
+  <?php
+  }
+
+  function latest_project_meta( $post_id ) {
+    /**
+     * Verify Nonce
+     */
+     if( ! isset( $_POST['meta_box_project_nonce'] ) || ! wp_verify_nonce( $_POST['meta_box_project_nonce'], basename(__FILE__) ) ) {
+       return;
+     }
+
+     /**
+      * Disable if autosave
+      */
+      if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        return;
+      }
+
+      /**
+       * Verify Capabilities
+       */
+       if( ! current_user_can( 'edit_post', $post_id ) ) {
+         return;
+       }
+
+       /**
+        * Update Post Meta
+        */
+        if( isset( $_REQUEST['page'] ) ) {
+          update_post_meta( $post_id, '_page', sanitize_text_field( $_POST['page'] ) );
+        }
+        if( isset( $_REQUEST['external'] ) ) {
+          update_post_meta( $post_id, '_external', sanitize_text_field( $_POST['external'] ) );
+        }
+  }
+  add_action( 'save_post', 'latest_project_meta' );
 
 /**
  * Initialize Custom Post Type for Featured Services

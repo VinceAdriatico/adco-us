@@ -87,6 +87,26 @@
   color: rgba(0,0,0, 0.3);
 }
 
+/**
+ * Slick Slider
+ */
+ .slick-prev {
+   content: 'previous';
+   width: 50px;
+   height: 50px;
+   background-color: red;
+ }
+ .slick-next {
+   content: 'next';
+ }
+
+ /**
+  * General
+  */
+  .home-section .title {
+    font-size: 3rem;
+  }
+
  /**
   * Internal
   */
@@ -106,9 +126,6 @@
     align-items: flex-start;
     justify-content: center;
   }
-  .site-content {
-    margin: 0 auto 2rem;
-  }
   .site-content .widget-area {
     padding: 2rem;
   }
@@ -124,17 +141,90 @@
  /**
   * Home Page
   */
+  .home-section.contain {
+    padding: 5vh 10vw;
+  }
+
+  /*--- Hero Banner ---*/
   .home-section.hero {
+    background-position: 0 55%;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-attachment: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 3rem;
+  }
+  .home-section.hero h1 {
+    line-height: 4rem;
+    font-size: 3.5rem;
+  }
+
+  /*--- Product Section ---*/
+  .home-section.product .card-title {
+    font-size: 1.7rem;
+  }
+  .home-section.product a {
+    font-size: 0.7rem;
+  }
+
+
+  /*--- About Section ---*/
+  .home-section.about {
+    background-size: 100% 50%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    height: 100vh;
+  }
+  .home-section.about p {
+    width: 85%;
   }
 
   /**
-   * Tablet
+   * Tablet & Up
    */
   @media screen and (min-width: 770px) {
+    /**
+     * Home Page
+     */
+
+     /* Hero Banner */
+     .home-section.hero {
+       flex-direction: row;
+       padding: 10vh 15vw;
+       background-size: 20%;
+       background-position: 5% 100%;
+       position: relative;
+     }
+     .home-section.hero svg {
+       flex: 0 0 50%;
+       margin-right: 2rem;
+       position: relative;
+     }
+
+     /*--- Product SEction ---*/
+     .home-section.product img {
+       width: 100%;
+     }
+     .home-section.product .slick-slide {
+       margin: 0 0.5rem;
+     }
+     .home-section.product .slick-list {
+       margin: 0 -0.5rem;
+     }
+
+     /*--- About Section ---*/
+     .home-section.about p {
+       width: 50%;
+     }
+
+
     .search .site-content {
       display: flex;
       align-items: flex-start;
@@ -157,4 +247,14 @@
      .blog .archive article {
        flex: 0 0 33%;
      }
+
+     /**
+      * Default Page
+      */
+      .default-page-container .wrap {
+        display: flex;
+      }
+      .default-page-container .container {
+        padding: 2rem 3rem;
+      }
   }

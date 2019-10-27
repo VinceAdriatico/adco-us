@@ -30,11 +30,6 @@
 
     <tr valign="top">
       <th scope="row">Main SVG</th>
-      <td><textarea name="adco-hero-banner[svg]"><?php echo esc_textarea( $option['svg'] ); ?></textarea></td>
-    </tr>
-
-    <tr valign="top">
-      <th scope="row">CTA Text</th>
-      <td><input type="text" name="adco-hero-banner[txt]" value="<?php echo esc_attr( $option['txt'] ); ?>" /></td>
+      <td><textarea name="adco-hero-banner[svg]" cols="10" rows="10"><?php echo esc_textarea( $option['svg'] ); ?></textarea></td>
     </tr>
   </table>
