@@ -37,7 +37,7 @@
      do_action( 'before_header_top' );
      ?>
     	<header id="masthead" class="site-header">
-    		<nav id="site-navigation" class="main-navigation">
+    		<nav id="site-navigation" class="main-navigation teal lighten-2">
           <div class="nav-wrapper">
             <a href="<?php echo get_home_url(); ?>" class="brand-logo">
       				<img src="<?php echo esc_url( $general['logo_svg'] ); ?>" alt="<?php echo get_bloginfo('display'); ?>" />

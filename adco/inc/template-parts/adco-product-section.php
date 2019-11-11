@@ -36,8 +36,10 @@
   $query = new WP_Query( $args );
   ?>
   <section class="home-section product contain">
-    <h1 class="title"><?php echo esc_attr( $product['title'] ); ?></h1>
-    <p class="subtitle"><?php echo esc_attr( $product['subtitle'] ); ?></td>
+    <span>
+      <h1 class="title"><?php echo esc_attr( $product['title'] ); ?></h1>
+      <p class="subtitle"><?php echo esc_attr( $product['subtitle'] ); ?></td>
+    </span>
     <?php if( $query->have_posts() ) {
       echo '<div class="slick-main">';
       while( $query->have_posts() ) {

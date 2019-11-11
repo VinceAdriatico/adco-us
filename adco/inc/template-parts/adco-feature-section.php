@@ -70,7 +70,7 @@
           ?>
           <li>
             <div class="row">
-              <div class="col s12 m6">
+              <div class="col">
                 <div class="card">
                   <div class="card-image">
                     <img src="<?php echo $img; ?>" alt="<?php echo $alt; ?>" />
