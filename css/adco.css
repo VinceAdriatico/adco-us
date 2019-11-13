@@ -182,15 +182,15 @@
 
   /*--- Hero Banner ---*/
   .home-section.hero {
-    background-position: 0 55%;
+    background-position: 0 50%;
     background-repeat: no-repeat;
-    background-size: 70%;
+    background-size: 15%;
     background-attachment: fixed;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     flex-direction: column;
-    padding: 3rem;
+    padding: 11% 0% 5% 20%;
   }
   .home-section.hero h1 {
     line-height: 4rem;
