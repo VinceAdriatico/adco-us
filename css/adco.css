@@ -212,10 +212,9 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: bottom;
-    background-color: black;
+    background-color: white;
     display: flex;
     flex-direction: column;
-    color: white;
     height: 80vh;
   }
   .home-section.about p {
