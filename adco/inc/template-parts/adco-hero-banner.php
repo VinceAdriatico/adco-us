@@ -22,7 +22,6 @@
  /**
   * Parts
   */
-
 ?>
 <section class="home-section hero" style="background-image: url(<?php echo $option['bg']; ?>);">
   <?php echo $option['svg']; ?>

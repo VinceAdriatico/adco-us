@@ -1,4 +1,4 @@
-<?php
+g<?php
 /**
  * ADCO.us - Theme Section
  *

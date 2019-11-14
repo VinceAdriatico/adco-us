@@ -105,6 +105,21 @@
                </tr>
 
                <tr valign="top">
+                 <th scope="row">Name Icon</th>
+                 <td><input type="url" name="general[name-icon]" value="<?php echo esc_url( $general['name-icon'] ); ?>" /></td>
+               </tr>
+
+               <tr valign="top">
+                 <th scope="row">E-Mail Icon</th>
+                 <td><input type="url" name="general[email-icon]" value="<?php echo esc_url( $general['email-icon'] ); ?>" /></td>
+               </tr>
+
+               <tr valign="top">
+                 <th scope="row">Phone Icon</th>
+                 <td><input type="url" name="general[phone-icon]" value="<?php echo esc_url( $general['phone-icon'] ); ?>" /></td>
+               </tr>
+
+               <tr valign="top">
                  <th scope="row"><h1>Internal</h1>
                </tr>
 
