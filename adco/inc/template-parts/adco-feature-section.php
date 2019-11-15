@@ -29,7 +29,7 @@
      'post_type'           => 'latest_project',
      'orderby'             => 'DESC',
      'order'               => 'post_date',
-     'posts_per_page'      => 3
+     'posts_per_page'      => 2
    );
 
    // Query
@@ -69,20 +69,26 @@
          }
           ?>
           <li>
-            <div class="row">
-              <div class="col">
-                <div class="card">
-                  <div class="card-image">
-                    <img src="<?php echo $img; ?>" alt="<?php echo $alt; ?>" />
-                    <span class="card-title"><?php echo get_the_title(); ?></span>
-                    <a href="<?php echo $link; ?>" title="<?php echo get_the_title(); ?>" class="btn-floating halfway-fab waves-effect waves-light red" <?php echo $target; ?>><i class="material-icons">add</i></a>
-                  </div>
+            <div class="col s12 m7">
+              <h2 class="header"><?php echo get_the_title(); ?></h2>
+              <div class="card horizontal">
+                <div class="card-image">
+                  <img src="<?php echo esc_url( get_the_post_thumbnail_url() ); ?>" alt="<?php echo get_the_title(); ?> at <?php echo $company; ?>" />
+                </div>
+                <div class="card-stacked">
                   <div class="card-content">
                     <p><?php echo get_the_content(); ?></p>
                   </div>
+                  <?php ?>
+                  <?php if( $ext !== '' ) { ?>
+                    <div class="Card-action">
+                      <a href="<? echo $ext; ?>" alt="<?php echo get_the_title(); ?> for <?php echo $company; ?>">View More</a>
+                    </div>
+                  <?php } ?>
                 </div>
               </div>
             </div>
+      
           </li>
       <?php
       } wp_reset_postdata();

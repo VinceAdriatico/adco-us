@@ -22,8 +22,7 @@
     <div class="content">
       <h3><?php echo $option['title']; ?></h3>
       <p><?php echo $option['content']; ?>
-        <a id="modal-toggle" class="waves-effect waves-light btn-large">Button</a>
-        <!---<a id="modal-toggle" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>--->
+        <?php echo do_shortcode( $option['shortcode'] ); ?>
     </div>
   </div>
 </section>

@@ -74,53 +74,18 @@
              settings_fields( 'adco_main' );
              do_settings_sections( 'adco_main' );
 
-             $general = get_option( 'general' );
              $internal = get_option( 'internal' );
              $footer = get_option( 'footer' );
              ?>
              <table class="form-table">
-               <!--- General --->
+
                <tr valign="top">
-                 <th scope="row"><h3>General</h3></th>
+                 <th scope="row"><h1>Internal</h1>
                </tr>
 
                <tr valign="top">
                  <th scope="row">Logo - SVG</th>
-                 <td><input type="url" name="general[logo_svg]" value="<?php echo esc_url( $general['logo_svg'] ); ?>" /></td>
-               </tr>
-
-               <tr valign="top">
-                 <th scope="row">Default Image</th>
-                 <td><input type="url" name="general[thumbnail]" value="<?php echo esc_url( $general['thumbnail'] ); ?>" /></td>
-               </tr>
-
-               <tr valign="top">
-                 <th scope="row">Phone</th>
-                 <td><input type="text" name="general[phone]" value="<?php echo esc_attr( $general['phone'] ); ?>" /></td>
-               </tr>
-
-               <tr valign="top">
-                 <th scope="row">E-Mail</th>
-                 <td><input type="text" name="general[email]" value="<?php echo esc_attr( $general['email'] ); ?>" /></td>
-               </tr>
-
-               <tr valign="top">
-                 <th scope="row">Name Icon</th>
-                 <td><input type="url" name="general[name-icon]" value="<?php echo esc_url( $general['name-icon'] ); ?>" /></td>
-               </tr>
-
-               <tr valign="top">
-                 <th scope="row">E-Mail Icon</th>
-                 <td><input type="url" name="general[email-icon]" value="<?php echo esc_url( $general['email-icon'] ); ?>" /></td>
-               </tr>
-
-               <tr valign="top">
-                 <th scope="row">Phone Icon</th>
-                 <td><input type="url" name="general[phone-icon]" value="<?php echo esc_url( $general['phone-icon'] ); ?>" /></td>
-               </tr>
-
-               <tr valign="top">
-                 <th scope="row"><h1>Internal</h1>
+                 <td><input type="url" name="internal[logo-svg]" value="<?php echo esc_url( $internal['logo-svg'] ); ?>" /></td>
                </tr>
 
                <tr valign="top">
@@ -134,7 +99,8 @@
                </tr>
 
                <tr valign="top">
-                 <th scope="row">
+                 <th scope="row">Phone Icon</th>
+                 <td><input type="url" name="internal[phone-icon]" value="<?php echo esc_url( $internal['phone-icon'] ); ?>" /></td>
                </tr>
 
                <tr valign="top">

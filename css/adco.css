@@ -239,6 +239,14 @@
      background-color: #ececec;
      padding: 1rem;
    }
+   .home-section.feature .card-image {
+     background-color: #4DB6AC;
+     display: flex;
+     padding: 1rem;
+   }
+   .home-section.feature .card-image img {
+     width: 20vw !important;
+   }
    .home-section.feature ul {
      display: flex;
      flex-direction: column;
