@@ -124,6 +124,20 @@
                </tr>
 
                <tr valign="top">
+                 <th scope="row">Name Icon</th>
+                 <td><input type="url" name="internal[name-icon]" value="<?php echo esc_url( $internal['name-icon'] ); ?>" /></td>
+               </tr>
+
+               <tr valign="top">
+                 <th scope="row">E-Mail Icon</th>
+                 <td><input type="url" name="internal[email-icon]" value="<?php echo esc_url( $internal['email-icon'] ); ?>" /></td>
+               </tr>
+
+               <tr valign="top">
+                 <th scope="row">
+               </tr>
+
+               <tr valign="top">
                  <th scope="row">Default Thumbnail</th>
                  <td><input type="url" name="internal[thumb]" value="<?php echo esc_url( $internal['thumb'] ); ?>" /></td>
                </tr>
