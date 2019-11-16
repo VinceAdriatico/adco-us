@@ -21,13 +21,13 @@ if( ! function_exists( 'adco_icons' ) ) {
     /**
      * Options
      */
-    $general = get_option( 'general' );
+    $internal = get_option( 'internal' );
     $company = get_bloginfo( 'display' );
 
     if( $icon == 'name' ) {
 
       // Name Icon
-      $img = $general['name-icon'];
+      $img = $internal['name-icon'];
 
       // Alt Tag
       $alt = "$company Name Icon";
@@ -35,7 +35,7 @@ if( ! function_exists( 'adco_icons' ) ) {
     } else if( $icon == 'e-mail' ) {
 
       // Email Icon
-      $img = $general['email-icon'];
+      $img = $internal['email-icon'];
 
       // Alt Tag
       $alt = "$company E-Mail Icon";
@@ -43,7 +43,7 @@ if( ! function_exists( 'adco_icons' ) ) {
     } else if( $icon == 'phone' ) {
 
       // Phone Icon
-      $img = $general['phone-icon'];
+      $img = $internal['phone-icon'];
 
       // Alt Tag
       $alt = "$company Phone Icon";
@@ -57,5 +57,5 @@ if( ! function_exists( 'adco_icons' ) ) {
 
     return $content;
   }
-  add_shortcode( 'acdoIcons', 'adco_icons' ); 
+  add_shortcode( 'adcoIcons', 'adco_icons' );
 }

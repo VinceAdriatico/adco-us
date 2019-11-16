@@ -84,6 +84,11 @@
                </tr>
 
                <tr valign="top">
+                 <th scope="row">Company Name (Marked Up)</th>
+                 <td><input type="text" name="internal[company-name]" value="<?php echo esc_attr( $internal['company-name'] ); ?>" /></td>
+               </tr>
+
+               <tr valign="top">
                  <th scope="row">Logo - SVG</th>
                  <td><input type="url" name="internal[logo-svg]" value="<?php echo esc_url( $internal['logo-svg'] ); ?>" /></td>
                </tr>

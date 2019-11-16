@@ -36,7 +36,7 @@
    $query = new WP_Query( $args );
  ?>
  <section class="home-section feature contain">
-   <h2 class="title"><?php echo esc_attr( $option['title'] ); ?></h2>
+   <h2 class="title"><?php echo  $option['title']; ?></h2>
    <?php
     if( $query->have_posts() ) {
       echo '<ul>';
@@ -70,25 +70,24 @@
           ?>
           <li>
             <div class="col s12 m7">
-              <h2 class="header"><?php echo get_the_title(); ?></h2>
               <div class="card horizontal">
                 <div class="card-image">
                   <img src="<?php echo esc_url( get_the_post_thumbnail_url() ); ?>" alt="<?php echo get_the_title(); ?> at <?php echo $company; ?>" />
                 </div>
                 <div class="card-stacked">
                   <div class="card-content">
-                    <p><?php echo get_the_content(); ?></p>
+                    <h5><?php echo get_the_title(); ?></h5>
                   </div>
                   <?php ?>
                   <?php if( $ext !== '' ) { ?>
-                    <div class="Card-action">
+                    <div class="card-action">
                       <a href="<? echo $ext; ?>" alt="<?php echo get_the_title(); ?> for <?php echo $company; ?>">View More</a>
                     </div>
                   <?php } ?>
                 </div>
               </div>
             </div>
-      
+
           </li>
       <?php
       } wp_reset_postdata();

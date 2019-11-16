@@ -17,14 +17,14 @@
   */
   $option = get_option( 'adco-contact-section' );
 ?>
-<section class="home-section contact" style="background-image: linear-gradient(to bottom, <?php echo $option['gradient-1']; ?> 0%, <?php echo $option['gradient-1']; ?> 50%, <?php echo $option['gradient-2']; ?> 51%, <?php echo $option['gradient-2']; ?> 100% );">
-  <div class="card">
-    <div class="content">
-      <h3><?php echo $option['title']; ?></h3>
+<section class="home-section contact contain">
+    <div class="content card">
+      <span class="head">
+      <h2 class="header title"><?php echo $option['title']; ?></h2>
+      </span>
       <p><?php echo $option['content']; ?>
         <?php echo do_shortcode( $option['shortcode'] ); ?>
     </div>
-  </div>
 </section>
 <!--- Modal --->
 <div class="contact modal" id="contactModal">

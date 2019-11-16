@@ -9,7 +9,11 @@
  * @package adco
  */
 
- $general = get_option( 'general' );
+
+ /**
+  * Options
+  */
+  $internal = get_option( 'internal' ); 
 
 ?>
 <!doctype html>
@@ -40,7 +44,7 @@
     		<nav id="site-navigation" class="main-navigation teal lighten-2">
           <div class="nav-wrapper">
             <a href="<?php echo get_home_url(); ?>" class="brand-logo">
-      				<img src="<?php echo esc_url( $general['logo_svg'] ); ?>" alt="<?php echo get_bloginfo('display'); ?>" />
+      				<?php echo $internal['company-name']; ?>
       			</a>
             <a  href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
       			<?php

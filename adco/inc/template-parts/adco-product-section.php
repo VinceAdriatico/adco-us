@@ -37,7 +37,7 @@
   ?>
   <section class="home-section product contain">
     <span>
-      <h1 class="title"><?php echo esc_attr( $product['title'] ); ?></h1>
+      <h1 class="title"><?php echo $product['title']; ?></h1>
       <p class="subtitle"><?php echo esc_attr( $product['subtitle'] ); ?></td>
     </span>
     <?php if( $query->have_posts() ) {
