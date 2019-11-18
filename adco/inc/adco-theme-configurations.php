@@ -16,7 +16,7 @@
  $form = do_shortcode( $form );
 
  return $form;
- } 
+ }
 
  /**
   * Add SVG Support
@@ -29,6 +29,10 @@
  }
  add_action('upload_mimes', 'addSVG');
 
+ /**
+  * Add Excerpt to pages
+  */
+  add_post_type_support( 'excerpt', 'page' ); 
 
 /**
  * Add Footer Main
@@ -311,7 +315,6 @@
         }
   }
   add_action( 'save_post', 'core_feature_meta' );
-
 
 
  /**

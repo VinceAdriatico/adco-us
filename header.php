@@ -13,7 +13,7 @@
  /**
   * Options
   */
-  $internal = get_option( 'internal' ); 
+  $internal = get_option( 'internal' );
 
 ?>
 <!doctype html>
@@ -49,12 +49,12 @@
             <a  href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
       			<?php
       			wp_nav_menu( array(
-      				'theme_location' => 'primary',
+      				'theme_location' => 'menu-1',
       				'container'      => 'ul',
       				'menu_class'		 => 'right hide-on-med-and-down'
       			) );
             wp_nav_menu( array(
-              'theme_location'    => 'primary',
+              'theme_location'    => 'menu-1',
               'container'         => 'ul',
               'menu_class'        => 'side-nav',
               'menu_id'           => 'mobile-menu'

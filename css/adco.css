@@ -104,6 +104,41 @@
   color: #EEC584;
 }
 /**
+ * Contact Form 7
+ **/
+.wpcf7-form .wpcf7-response-output.wpcf7-validation-errors {
+    color: #D8000C;
+    background-color: #FFBABA;
+    border: 0;
+    padding: 10px;
+    line-height: 1.7rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.wpcf7-form .wpcf7-response-output.wpcf7-mail-sent-ok {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    border: 0;
+    padding: 10px;
+    line-height: 1.7rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+div.wpcf7-mail-sent-ok:before,div.wpcf7-validation-errors:before {
+    font: 26px/30px dashicons;
+    margin-right: 16px;
+    vertical-align: middle;
+}
+div.wpcf7-mail-sent-ok:before {
+    content: "\f147";
+}
+div.wpcf7-validation-errors:before {
+    content: "\f158";
+}
+.contact-submit {
+    text-align: center;
+}
+
+
+/**
  * Slick Slider
  */
  .slick-prev {
@@ -176,10 +211,17 @@
   .general-header h1 {
     font-size: 15vw;
   }
+  .default-page-container .container {
+    padding: 2rem 0;
+  }
   .breadcrumbs {
     display: flex;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
+    background-color: #E59F71;
+    z-index: 777;
+    box-shadow: none;
+    padding-left: 3rem;
   }
   .site-content .widget-area {
     padding: 2rem;
@@ -197,7 +239,7 @@
   * Home Page
   */
   .home-section.contain {
-    padding: 5vh 10vw;
+    padding: 5vh 5vw;
   }
 
   /*--- Hero Banner ---*/
@@ -230,7 +272,7 @@
   .home-section.about {
     background-size: 150%;
     background-repeat: no-repeat;
-    background-position: -100% 100%;
+    background-position: -130% 100%;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -249,6 +291,9 @@
     color: white;
     text-align: center;
     padding: 2rem 1rem;
+  }
+  .home-section.contact  ul input {
+    border-bottom: 1px solid #d1d1d1 !important;
   }
   .home-section.contact .header {
     position: relative;
@@ -320,18 +365,27 @@
   /**
    * Tablet & Up
    */
-  @media screen and (min-width: 770px) {
+  @media screen and (min-width: 750px) {
+
+    /**
+     * Default Page
+     */
+     .general.header {
+       height: 50vh;
+       display: flex;
+       align-items: flex-end;
+     }
     /**
      * Home Page
      */
      .home-section.contain {
-       padding: 5vh 20vw;
+       padding: 5vh 15vw;
      }
 
      /* Hero Banner */
      .home-section.hero {
        flex-direction: row;
-       padding: 10vh 15vw;
+       padding: 10vh 10vw;
        background-size: 20%;
        background-position: 5% 100%;
        position: relative;
@@ -343,6 +397,9 @@
      }
 
      /*--- Product Section ---*/
+     .home-section.product .card-title {
+       font-size: 1.5rem;
+     }
      .home-section.product img {
        width: 100%;
      }
@@ -357,30 +414,55 @@
      .home-section.about {
        background-size: 25%;
        background-position: bottom right;
-       height: 100vh;
-     }
-     .home-section.about p {
-       width: 50%;
+       height: unset;
+       display: flex;
+       align-items: flex-start;
+       justify-content: center;
      }
 
      /*--- Feature Section ---*/
+     .home-section.feature  .card-image {
+       max-width: 15% !important;
+     }
      .home-section.feature ul {
        display: flex;
        flex-direction: row;
+       align-items: flex-start;
+     }
+     .home-section.feature li {
+       width: 100%;
      }
 
 
       /*--- Contact Section ---*/
-    .home-section.contact .content {
-      padding: 0 5vw 5vh;
-    }
+      .home-section.contact ul {
+        width: 50%;
+        padding: 2rem 0;
+        margin: 3rem auto;
+        background-color: #E59F71;
+        border-radius: 7px;
+      }
+      .home-section.contact li {
+        justify-content: center;
+      }
+      .home-section.contact input::placeholder, .home-section.contact input, .home-section.contact textarea::placeholder {
+        color: white;
+      }
+
     .search .site-content {
       display: flex;
-      align-items: flex-start;
+      align-items: flex-start;w
       justify-content: flex-start;
     }
     .site-content .widget-area {
       padding-top: 2rem;
+      background: linear-gradient(
+        to bottom,
+        rgba(238, 197, 132, 1),
+        rgba(238, 197, 132, 1) 100%);
+      flex: 0 0 25%;
+      z-index: 555;
+      color: white;
     }
 
     /**
@@ -403,7 +485,17 @@
       .default-page-container .wrap {
         display: flex;
       }
-      .default-page-container .container {
+      .single-post-container .container {
         padding: 2rem 3rem;
       }
+  }
+
+
+  @media screen and (min-width: 1200px) {
+    .home-section.about, .home-section.feature {
+      padding: 5vh 30vw;
+    }
+    .home-section.contact {
+      padding: 0 15vw 5vw;
+    }
   }

@@ -229,7 +229,7 @@
         $second = $gra['linear-gradient-2'];
 
         // Parts
-        $open = "<div class='general header' style='background-image: linear-gradient(to right, $first, $second ), url( $bg );'>";
+        $open = "<div class='general header' style='background-image: linear-gradient(to bottom, $first, $second ), url( $bg );'>";
         $titlet = "<h1>$title</h1>";
         $close = "</div>";
 

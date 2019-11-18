@@ -47,7 +47,7 @@
    add_action( 'default_page_content', 'adco_breadcrumbs', 10 );
    add_action( 'default_page_content', 'adco_container_wrap', 15 );
    add_action( 'default_page_content', 'adco_content', 20 );
-   add_action( 'default_page_content', 'adco_sidebar', 25 );
+   // add_action( 'default_page_content', 'adco_sidebar', 25 );
    add_action( 'default_page_content', 'adco_container_wrap', 30 );
 
    /**
@@ -57,7 +57,7 @@
     add_action( 'content_single_post', 'adco_breadcrumbs', 10 );
     add_action( 'content_singel_post', 'adco_open_post', 15 );
     add_action( 'content_single_post', 'adco_content', 20 );
-    // add_action( 'content_single_post', 'adco_sidebar', 25 );
+    add_action( 'content_single_post', 'adco_sidebar', 25 );
     add_action( 'content_single_post', 'adco_close_post', 30 );
 
     /**

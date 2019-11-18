@@ -20,6 +20,6 @@
   $lin2 = $internal['linear-gradient-2'];
   $bg = $internal['blog-bg'];
   ?>
-  <div class="general header" style="background-image: linear-gradient( to right, <?php echo $lin1; ?>, <?php echo $lin2; ?>), url(<?php echo $bg; ?>);">
+  <div class="general header" style="background-image: linear-gradient( to bottom, <?php echo $lin1; ?>, <?php echo $lin2; ?>), url(<?php echo $bg; ?>);">
     <h1><?php echo $internal['blog-title']; ?></h1>
   </div>
