@@ -1,4 +1,4 @@
-<?php
+w<?php
 /**
  * ADCO.us - Inline CSS
  *
@@ -18,10 +18,3 @@
   $hero = get_option( 'adco-hero-banner' );
 
  ?>
- <style>
-  .home-section.hero svg:after {
-    height: 25vh;
-    width: 25vw;
-    content: 'test';
-  }
- </style>

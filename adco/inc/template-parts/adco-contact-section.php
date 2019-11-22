@@ -19,9 +19,9 @@
 ?>
 <section class="home-section contact contain">
     <div class="content card">
-      <span class="head">
+      <div class="head">
       <h2 class="header title"><?php echo $option['title']; ?></h2>
-      </span>
+      </div>
       <p><?php echo $option['content']; ?>
         <?php echo do_shortcode( $option['shortcode'] ); ?>
     </div>

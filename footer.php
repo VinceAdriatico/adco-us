@@ -42,7 +42,7 @@
 		</div>
 		<div class="footer-copyright">
 			<div class="container">
-				Created by <a href="https://www.linkedin.com/in/vince-adriatico" ref="nofollow" target="_blank">Vince Adriatico</a>
+				Created by <a href="https://www.linkedin.com/in/vince-adriatico" target="_blank">Vince Adriatico</a>
 			</div>
 		</div>
 	</footer><!-- #colophon -->

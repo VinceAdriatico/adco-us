@@ -26,8 +26,8 @@
 ?>
 <section class="home-section hero contain" style="background-image: url(<?php echo $option['bg']; ?>);">
   <?php echo $option['svg']; ?>
-  <span>
+  <div>
     <h1><?php echo $internal['company-name']; ?></h1>
     <p><?php echo $tagline; ?></p>
-  </span>
+  </div>
 </section>

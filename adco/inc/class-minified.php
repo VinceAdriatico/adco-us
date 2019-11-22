@@ -50,11 +50,13 @@
        $import = get_template_directory() . '/js/import.js';
        $materialize = get_template_directory() . '/materialize/js/materialize.min.js';
        $slick = get_template_directory() . '/slick/slick.js';
+       $lazy = get_template_directory() . '/lazyload-2.x/lazyload.js';
 
        $minifier = new Minify\JS( $materialize );
        $minifier->add( $import );
        $minifier->add( $adco );
        $minifier->add( $slick );
+       $minifier->add( $lazy );
        $minifier->minify( $minifiedpath );
     }
   }

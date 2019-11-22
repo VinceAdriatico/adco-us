@@ -36,10 +36,10 @@
   $query = new WP_Query( $args );
   ?>
   <section class="home-section product contain">
-    <span>
+    <div>
       <h1 class="title"><?php echo $product['title']; ?></h1>
-      <p class="subtitle"><?php echo esc_attr( $product['subtitle'] ); ?></td>
-    </span>
+      <p class="subtitle"><?php echo esc_attr( $product['subtitle'] ); ?>
+    </div>
     <?php if( $query->have_posts() ) {
       echo '<div class="slick-main">';
       while( $query->have_posts() ) {
@@ -57,9 +57,9 @@
            $image = $feat;
          }
         ?>
-          <div class="card product">
+          <div class="card producwt">
             <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="<?php echo $image; ?>" />
+              <img class="activator lazyload" src="<?php echo $image; ?>" alt="<?php echo get_the_title(); ?>" />
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4"><?php echo get_the_title(); ?><i class="material-icons right">more_vert</i></span>

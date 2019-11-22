@@ -27,7 +27,7 @@
  /**
   * Main Content
   */
-  add_action( 'before_main_content', 'adco_inline_css', 5 );
+  // add_action( 'before_main_content', 'adco_inline_css', 5 );
   add_action( 'main_content', 'adco_hero_banner', 5 );
   add_action( 'main_content', 'adco_product_section', 10 );
   // add_action( 'main_content', 'adco_mission_section', 15 );
@@ -48,7 +48,7 @@
    add_action( 'default_page_content', 'adco_container_wrap', 15 );
    add_action( 'default_page_content', 'adco_content', 20 );
    // add_action( 'default_page_content', 'adco_sidebar', 25 );
-   add_action( 'default_page_content', 'adco_container_wrap', 30 );
+   add_action( 'default_page_content', 'adco_container_close', 30 );
 
    /**
     * Single Post

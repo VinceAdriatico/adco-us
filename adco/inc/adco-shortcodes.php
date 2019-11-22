@@ -53,7 +53,7 @@ if( ! function_exists( 'adco_icons' ) ) {
       $img = '';
     }
 
-    $content = "<img src='$img' alt='$alt' />";
+    $content = "<img src='$img' alt='$alt' class='lazyload'/>";
 
     return $content;
   }

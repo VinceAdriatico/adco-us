@@ -72,7 +72,7 @@
             <div class="col s12 m7">
               <div class="card horizontal">
                 <div class="card-image">
-                  <img src="<?php echo esc_url( get_the_post_thumbnail_url() ); ?>" alt="<?php echo get_the_title(); ?> at <?php echo $company; ?>" />
+                  <img src="<?php echo esc_url( get_the_post_thumbnail_url() ); ?>" alt="<?php echo get_the_title(); ?> at <?php echo $company; ?>" class="lazyload" />
                 </div>
                 <div class="card-stacked">
                   <div class="card-content">
@@ -81,7 +81,7 @@
                   <?php ?>
                   <?php if( $ext !== '' ) { ?>
                     <div class="card-action">
-                      <a href="<? echo $ext; ?>" alt="<?php echo get_the_title(); ?> for <?php echo $company; ?>">View More</a>
+                      <a href="<? echo $ext; ?>">View More</a>
                     </div>
                   <?php } ?>
                 </div>
