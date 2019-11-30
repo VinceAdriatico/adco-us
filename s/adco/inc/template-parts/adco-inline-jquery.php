@@ -12,6 +12,7 @@
    exit;
  }
  ?>
+ <h1>Test</h1>
  <script>
  jQuery(document).ready(function() {
    jQuery('.slick-main').slick({
@@ -29,23 +30,6 @@
        }
      ]
    });
-   // Animations
-   var fadeIn = {
-     p: {
-       opacity: 1
-     },
-     o: {
-       fast: {
-         duration: 1000,
-         easing: "linear"
-       },
-       slow: {
-         duration: 3000,
-         easing: "linear"
-       }
-     }
-   }   
-   jQuery('#test').velocity(fadeIn.p, fadeIn.o.fast);
    // // Get the modal
    // var modal = document.getElementById("contactModal");
    //
