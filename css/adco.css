@@ -406,9 +406,17 @@ div.wpcf7-validation-errors:before {
     line-height: 4rem;
     font-size: 3.5rem;
   }
+
+  /* Animations */
+  .home-section.hero .fadeTitle, .home-section.hero .fadeSubtitle {
+    opacity: 0;
+  }
+  .fade {
+    opacity: 0;
+  }
   .hero-row {
     opacity: 0;
-    transform: translate3d(-40px, 0, 0);
+    transform: translateX(-40px);
   }
 
   /*--- Product Section ---*/

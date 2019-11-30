@@ -49,14 +49,14 @@
        $adco = get_template_directory() . '/js/adco.js';
        $import = get_template_directory() . '/js/import.js';
        $materialize = get_template_directory() . '/materialize/js/materialize.min.js';
-       $velocity = get_template_directory() . '/js/velocity.js';
        $slick = get_template_directory() . '/slick/slick.js';
+       $velocity = get_template_directory() . '/velocity-master/velocity.js';
+       $ui = get_template_directory() . '/velocity-master/velocity.ui.js';
        $lazy = get_template_directory() . '/lazyload-2.x/lazyload.js';
 
        $minifier = new Minify\JS( $materialize );
        $minifier->add( $import );
        $minifier->add( $adco );
-       $minifier->add( $velocity );
        $minifier->add( $slick );
        $minifier->add( $lazy );
        $minifier->minify( $minifiedpath );

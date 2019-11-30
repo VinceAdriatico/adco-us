@@ -14,24 +14,14 @@
  ?>
  <script>
  jQuery(document).ready(function() {
-   jQuery('.slick-main').slick({
-     slidesToShow: 3,
-     dots: false,
-     autoplay: true,
-     responsive: [
-       {
-         breakpoint: 480,
-         settings: {
-           slidesToShow: 1,
-           prevArrow: jQuery('.slickprev'),
-           nextArrow: jQuery('.slick-next'),
-         }
-       }
-     ]
-   });
+
    // Animations
-   var fadeIn = {
-     p: {
+   var fadeDown = {
+     start: {
+       translateY: -20,
+     },
+     end: {
+       translateY: 0,
        opacity: 1
      },
      o: {
@@ -44,15 +34,95 @@
          easing: "linear"
        }
      }
-   };
-   var fadeRows = {
-     p: {
-       opacity: 1,
-       translate3d: "0,0,0"
+   }
+   var fadeUp = {
+     start: {
+       translateY: 20
+     },
+     end: {
+       translateY: 0,
+       opacity: 1
+     },
+     o: {
+       fast: {
+         duration: 1000,
+         easing: "linear"
+       },
+       slow: {
+         duration: 3000,
+         easing: "linear"
+       }
      }
-   };
-   jQuery('#test').velocity(fadeIn.p, fadeIn.o.fast);
-   jQuery('.hero-row').velocity(fadeRows.p, fadeIn.o.slow);
+   }
+   var fadeRight = {
+     start: {
+       translateX: "-20px",
+     },
+     end: {
+       translateX: "0px",
+       opacity: 1
+     },
+     o: {
+       fast: {
+         duration: 1000,
+         easing: "linear"
+       },
+       slow: {
+         duration: 3000,
+         easing: "linear"
+       }
+     }
+   }
+   function titlesFade() {
+     jQuery('.home-section.hero .fadeTitle').delay(1000)
+      .velocity(fadeDown.start, fadeDown.o.slow)
+      .velocity(fadeDown.end, fadeDown.o.fast);
+     jQuery('.home-section.hero .fadeSubtitle')
+      .velocity(fadeUp.start, fadeUp.o.slow)
+      .velocity(fadeUp.end, fadeUp.o.fast);
+   }
+   function browserGen() {
+     // Containers
+     jQuery('#hero-icon .cls-10').delay(300)
+     .velocity(fadeDown.start, fadeDown.o.slow)
+     .velocity(fadeDown.end, fadeDown.o.fast );
+     jQuery('#hero-icon .cls-13').delay(500)
+     .velocity(fadeUp.start, fadeUp.o.slow)
+     .velocity(fadeUp.end, fadeUp.o.fast);
+     jQuery('#hero-icon .body').delay(700)
+     .velocity(fadeUp.start, fadeUp.o.slow)
+     .velocity(fadeUp.end, fadeUp.o.fast);
+     jQuery('#hero-icon ')
+
+
+     // Rows
+     jQuery('.hero-row.delay-3').delay(1300)
+     .velocity(fadeRight.start, fadeRight.o.slow)
+     .velocity(fadeRight.end, fadeRight.o.fast);
+     jQuery('.hero-row.delay-6').delay(1600)
+     .velocity(fadeRight.start, fadeRight.o.slow)
+     .velocity(fadeRight.end, fadeRight.o.fast);
+     jQuery('.hero-row.delay-9').delay(1900)
+     .velocity(fadeRight.start, fadeRight.o.slow)
+     .velocity(fadeRight.end, fadeRight.o.fast);
+     jQuery('.hero-row.delay-12').delay(2200)
+     .velocity(fadeRight.start, fadeRight.o.slow)
+     .velocity(fadeRight.end, fadeRight.o.fast);
+   }
+   function homeSequence() {
+
+     // Hero Banner Titles
+     titlesFade();
+
+     // Animate Browser
+     browserGen();
+   }
+   homeSequence();
+
+   // jQuery('.hero-row').velocity(fadeRows.start, fadeRows.o.fast, function() {
+   //
+   // };
+
    // // Get the modal
    // var modal = document.getElementById("contactModal");
    //
