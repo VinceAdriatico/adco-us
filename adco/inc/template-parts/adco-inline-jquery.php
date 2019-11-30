@@ -44,8 +44,15 @@
          easing: "linear"
        }
      }
-   }   
+   };
+   var fadeRows = {
+     p: {
+       opacity: 1,
+       translate3d: "0,0,0"
+     }
+   };
    jQuery('#test').velocity(fadeIn.p, fadeIn.o.fast);
+   jQuery('.hero-row').velocity(fadeRows.p, fadeIn.o.slow);
    // // Get the modal
    // var modal = document.getElementById("contactModal");
    //

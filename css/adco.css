@@ -13,6 +13,137 @@
  .delay-12 {
    animation-delay: 1.2s;
  }
+ @keyframes expand {
+ 	from {
+ 		transform: scale3d(0,0,0);
+ 		opacity: 0;
+ 	}
+
+ 	to {
+ 		transform: scale3d(1,1,1);
+ 		opacity: 1;
+ 	}
+ }
+ @-webkit-keyframes expand {
+ 	from {
+ 		transform: scale3d(0,0,0);
+ 		opacity: 0;
+ 	}
+
+ 	to {
+ 		transform: scale3d(1,1,1);
+ 		opacity: 0;
+ 	}
+ }
+ @keyframes fadeInUp {
+     from {
+         transform: translate3d(0,40px,0);
+ 				opacity: 0;
+     }
+
+     to {
+         transform: translate3d(0,0,0);
+         opacity: 1;
+     }
+ }
+
+ @-webkit-keyframes fadeInUp {
+     from {
+         transform: translate3d(0,40px,0);
+ 				opacity: 0;
+     }
+
+     to {
+         transform: translate3d(0,0,0);
+         opacity: 1;
+     }
+ }
+ @keyframes fadeInUpBlock {
+     from {
+         transform: translate3d(0,80px,0)
+     }
+
+     to {
+         transform: translate3d(0,0,0);
+         opacity: 1
+     }
+ }
+
+ @-webkit-keyframes fadeInUpBlock {
+     from {
+         transform: translate3d(0,80px,0)
+     }
+
+     to {
+         transform: translate3d(0,0,0);
+         opacity: 1
+     }
+ }
+ @keyframes fadeInDown {
+     from {
+         transform: translate3d(0,-40px,0)
+     }
+
+     to {
+         transform: translate3d(0,0,0);
+         opacity: 1
+     }
+ }
+
+ @-webkit-keyframes fadeInDown {
+     from {
+         transform: translate3d(0,-40px,0);
+ 				opacity: 0;
+     }
+
+     to {
+         transform: translate3d(0,0,0);
+         opacity: 1;
+     }
+ }
+ @keyframes fadeInLeft {
+     from {
+         transform: translate3d(-40px,0,0);
+ 				opacity: 0;
+     }
+
+     to {
+         transform: translate3d(0,0,0);
+         opacity: 1;
+     }
+ }
+
+ @-webkit-keyframes fadeInRight{
+     from {
+         transform: translate3d(-40px,0,0)
+     }
+
+     to {
+         transform: translate3d(0,0,0);
+         opacity: 1
+     }
+ }
+ @keyframes fadeInRight {
+     from {
+         transform: translate3d(80px,0,0)
+     }
+
+     to {
+         transform: translate3d(0,0,0);
+         opacity: 1
+     }
+ }
+
+ @-webkit-keyframes fadeInRight{
+     from {
+         transform: translate3d(80px,0,0)
+     }
+
+     to {
+         transform: translate3d(0,0,0);
+         opacity: 1
+     }
+ }
 /**
  * Typography
  */
@@ -274,6 +405,10 @@ div.wpcf7-validation-errors:before {
   .home-section.hero h1 {
     line-height: 4rem;
     font-size: 3.5rem;
+  }
+  .hero-row {
+    opacity: 0;
+    transform: translate3d(-40px, 0, 0);
   }
 
   /*--- Product Section ---*/
