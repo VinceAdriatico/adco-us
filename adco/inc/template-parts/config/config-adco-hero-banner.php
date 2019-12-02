@@ -24,12 +24,12 @@
     </tr>
 
     <tr valign="top">
-      <th scope="row">Background - SVG</th>
+      <th scope="row">Background Image</th>
       <td><input type="url" name="adco-hero-banner[bg]" value="<?php echo esc_url( $option['bg'] ); ?>" /></td>
     </tr>
 
     <tr valign="top">
       <th scope="row">Main SVG</th>
-      <td><textarea name="adco-hero-banner[svg]" cols="10" rows="10"><?php echo esc_textarea( $option['svg'] ); ?></textarea></td>
+      <td><textarea name="adco-hero-banner[svg]" style="height: 250px"><?php echo esc_textarea( $option['svg'] ); ?></textarea></td>
     </tr>
   </table>

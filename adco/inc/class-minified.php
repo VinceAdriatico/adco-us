@@ -50,7 +50,7 @@
        $import = get_template_directory() . '/js/import.js';
        $materialize = get_template_directory() . '/materialize/js/materialize.min.js';
        $slick = get_template_directory() . '/slick/slick.js';
-       $velocity = get_template_directory() . '/velocity-master/velocity.js';
+       $velocity = get_template_directory() . '/velocity-master/velocity.min.js';
        $ui = get_template_directory() . '/velocity-master/velocity.ui.js';
        $lazy = get_template_directory() . '/lazyload-2.x/lazyload.js';
 

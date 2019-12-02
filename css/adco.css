@@ -416,7 +416,6 @@ div.wpcf7-validation-errors:before {
   }
   .hero-row {
     opacity: 0;
-    transform: translateX(-40px);
   }
 
   /*--- Product Section ---*/
