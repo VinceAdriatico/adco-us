@@ -395,7 +395,7 @@ div.wpcf7-validation-errors:before {
   .home-section.hero {
     background-position: 0 50%;
     background-repeat: no-repeat;
-    background-size: 15%;
+    background-size: 37%;
     background-attachment: fixed;
     display: flex;
     align-items: flex-start;
@@ -425,6 +425,17 @@ div.wpcf7-validation-errors:before {
 
   .home-section.product a {
     font-size: 0.7rem;
+  }
+  .home-section.product .card-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    height: 50vh;
+  }
+  .home-section.product .card-image img {
+    width: 50%;
+    margin: auto;
   }
 
 
@@ -558,7 +569,7 @@ div.wpcf7-validation-errors:before {
 
      /*--- Product Section ---*/
      .home-section.product .card-title {
-       font-size: 1.5rem;
+       font-size: 1rem;
      }
      .home-section.product img {
        width: 100%;
@@ -660,6 +671,11 @@ div.wpcf7-validation-errors:before {
      */
     .home-section.title {
       font-size: 4rem;
+    }
+
+    .home-section.hero {
+      background-size: 15%;
+      background-position: 5% 25%;
     }
 
     .home-section.hero p {

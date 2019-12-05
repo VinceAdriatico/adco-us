@@ -57,7 +57,7 @@
            $image = $feat;
          }
         ?>
-          <div class="card producwt">
+          <div class="card product">
             <div class="card-image waves-effect waves-block waves-light">
               <img class="activator lazyload" src="<?php echo $image; ?>" alt="<?php echo get_the_title(); ?>" />
             </div>

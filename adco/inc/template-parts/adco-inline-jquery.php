@@ -74,10 +74,10 @@
      }
    };
    function titlesFade() {
-     jQuery('.home-section.hero .fadeTitle').delay(1000)
+     jQuery('.home-section.hero .fadeTitle').delay(3000)
       .velocity(fadeDown.start, fadeDown.o.slow)
       .velocity(fadeDown.end, fadeDown.o.fast);
-     jQuery('.home-section.hero .fadeSubtitle')
+     jQuery('.home-section.hero .fadeSubtitle').delay(3000)
       .velocity(fadeUp.start, fadeUp.o.slow)
       .velocity(fadeUp.end, fadeUp.o.fast);
    }
@@ -107,6 +107,28 @@
      .velocity(fadeDown.start, fadeDown.o.slow)
      .velocity(fadeDown.end, fadeDown.o.fast);
    }
+   function heroFolders() {
+     jQuery('.hero-horizontal').delay(300)
+     .velocity(fadeRight.start, fadeRight.o.slow)
+     .velocity(fadeRight.end, fadeRight.o.fast);
+     jQuery('.hero-vertical').delay(600)
+     .velocity(fadeRight.start, fadeRight.o.slow)
+     .velocity(fadeRight.end, fadeRight.o.fast);
+   }
+   function heroTags() {
+     jQuery('.hero-tag.back').delay(300)
+     .velocity(fadeUp.start, fadeUp.o.slow)
+     .velocity(fadeUp.end, fadeUp.o.fast);
+     jQuery('.hero-tag.front').delay(300)
+     .velocity(fadeRight.start, fadeRight.o.slow)
+     .velocity(fadeRight.end, fadeRight.o.fast);
+     jQuery('.hero-tag.icon-top').delay(600)
+     .velocity(fadeDown.start, fadeDown.o.slow)
+     .velocity(fadeDown.end, fadeDown.o.fast);
+     jQuery('.hero-tag.icon-btm').delay(600)
+     .velocity(fadeUp.start,fadeUp.o.slow)
+     .velocity(fadeUp.end, fadeUp.o.fast);
+   }
    function browserGen() {
      jQuery('#hero-icon .background')
      .velocity(fadeUp.start, fadeUp.o.slow)
@@ -127,6 +149,8 @@
 
      heroRows();
      heroBtns();
+     heroFolders();
+     heroTags();
    }
    function homeSequence() {
 
@@ -138,34 +162,5 @@
    }
    homeSequence();
 
-   // jQuery('.hero-row').velocity(fadeRows.start, fadeRows.o.fast, function() {
-   //
-   // };
-
-   // // Get the modal
-   // var modal = document.getElementById("contactModal");
-   //
-   // // Get the button that opens the modal
-   // var btn = document.getElementById("modal-toggle");
-   //
-   // // Get the <span> element that closes the modal
-   // var span = document.getElementsByClassName("close")[0];
-   //
-   // // When the user clicks on the button, open the modal
-   // btn.onclick = function() {
-   //   modal.style.display = "block";
-   // }
-   //
-   // // When the user click  s on <span> (x), close the modal
-   // span.onclick = function() {
-   //   modal.style.display = "none";
-   // }
-   //
-   // // When the user clicks anywhere outside of the modal, close it
-   // window.onclick = function(event) {
-   //   if (event.target == modal) {
-   //     modal.style.display = "none";
-   //   }
-   // }
  });
  </script>

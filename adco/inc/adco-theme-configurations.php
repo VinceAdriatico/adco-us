@@ -32,7 +32,7 @@
  /**
   * Add Excerpt to pages
   */
-  add_post_type_support( 'excerpt', 'page' ); 
+  add_post_type_support( 'excerpt', 'page' );
 
 /**
  * Add Footer Main
