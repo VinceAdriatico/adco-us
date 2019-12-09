@@ -258,6 +258,8 @@
       'high'                        // Priority
     );
   }
+  add_action( 'add_meta_boxes', 'add_post_meta_features' );
+
   function run_feature_meta( $post ) {
     /**
      * Create Nonce
@@ -268,6 +270,7 @@
       * Get Post Meta
       */
       $cta = get_post_meta( $post->ID, '_page',  true );
+      $svg = get_post_meta( $post->ID, '_svg', true );
 
       $pages = get_pages();
       ?>
@@ -281,6 +284,10 @@
               </option>
               <?php } ?>
           </select>
+        </fieldset>
+        <fieldset>
+          <legend>SVG</legend>
+          <textarea name="svg"><?php echo esc_textarea( $svg ); ?></textarea>
         </fieldset>
       </div>
   <?php
@@ -312,6 +319,9 @@
         */
         if( isset( $_REQUEST['page'] ) ) {
           update_post_meta( $post_id, '_page', sanitize_text_field( $_POST['page'] ) );
+        }
+        if( isset( $_REQUEST['svg'] ) ) {
+          update_post_meta( $post_id, '_svg', $_POST['svg'] );
         }
   }
   add_action( 'save_post', 'core_feature_meta' );

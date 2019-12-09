@@ -49,6 +49,7 @@
          */
          $id = get_the_ID();
          $cta = get_post_meta( $id, '_page', true );
+         $svg = get_post_meta( $id, '_svg', true );
          $link = get_the_permalink( $cta );
          $feat = get_the_post_thumbnail_url();
          if( $feat == '' ) {
@@ -67,7 +68,7 @@
             </div>
             <div class="card-reveal">
               <span class="card-title grey-text text-darken-4"><?php echo get_the_title(); ?><i class="material-icons right">close</i></span>
-              <p><?php echo get_the_excerpt(); ?></p>
+              <?php echo get_the_content(); ?>
             </div>
           </div>
       <?php
