@@ -32,4 +32,14 @@
       <th scope="row">Main SVG</th>
       <td><textarea name="adco-hero-banner[svg]" style="height: 250px"><?php echo esc_textarea( $option['svg'] ); ?></textarea></td>
     </tr>
+
+    <tr valign="top">
+      <th scope="row">First Icon</th>
+      <td><input type="url" name="adco-hero-banner[first-icon]" value="<?php echo esc_url( $option['first-icon'] ); ?>" /></td>
+    </tr>
+
+    <tr valign="top">
+      <th scope="row">Second Icon</th>
+      <td><input type="url" name="adco-hero-banner[second-icon]" value="<?php echo esc_url( $option['second-icon'] ); ?>" /></td>
+    </tr>
   </table>

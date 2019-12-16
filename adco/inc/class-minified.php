@@ -54,11 +54,23 @@
        $ui = get_template_directory() . '/velocity-master/velocity.ui.js';
        $lazy = get_template_directory() . '/lazyload-2.x/lazyload.js';
 
+       /**
+        * Page Specific
+        */
+        if( is_front_page() ):
+          $page = get_template_directory() . '/js/pages/home.js';
+        elseif( is_page( 'about' ) ):
+          $page = get_template_directory() . '/js/pages/about.js';
+        endif;
+
+
+
        $minifier = new Minify\JS( $materialize );
        $minifier->add( $import );
        $minifier->add( $adco );
        $minifier->add( $slick );
        $minifier->add( $lazy );
+       $minifier->add( $page ); 
        $minifier->minify( $minifiedpath );
     }
   }

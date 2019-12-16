@@ -115,6 +115,20 @@
   /**
    * Generated Parts
    */
+   if( ! function_exists( 'open_adco_home_container' ) ) {
+     function open_adco_home_container() {
+       $content = "<div class='home wrap'><div class='card'>";
+
+       echo $content;
+     }
+   }
+   if( ! function_exists( 'close_adco_home_container' ) ) {
+     function close_adco_home_container() {
+       $content = '</div></div>';
+
+       echo $content;
+     }
+   }
    if( ! function_exists( 'adco_container_wrap' ) ) {
      function adco_container_wrap() {
        $content = "<div class='wrap'>";
@@ -255,6 +269,8 @@
    /**
     * Template Parts
     */
+
+    // Inline JQuery
     if( ! function_exists( 'adco_inline_jquery' ) ) {
       function adco_inline_jquery() {
         /**
@@ -352,6 +368,25 @@
          adco_get_template( 'config/config-adco-hero-banner.php' );
       }
     }
+
+    if( ! function_exists( 'adco_main_section') ) {
+      function adco_main_section() {
+        /**
+         * Get Main Section
+         */
+         adco_get_template( 'adco-main-section.php' );
+      }
+    }
+    // Configuration File
+    if( ! function_exists( 'adco_main_section_config' ) ) {
+      function adco_main_section_config() {
+        /**
+         * Get Main Section Configuration File
+         */
+         adco_get_template( 'config/config-adco-main-section.php' );
+      }
+    }
+
 
     if( ! function_exists( 'adco_product_section' ) ) {
       function adco_product_section() {

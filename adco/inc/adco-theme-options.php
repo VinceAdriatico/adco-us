@@ -78,7 +78,6 @@
              $footer = get_option( 'footer' );
              ?>
              <table class="form-table">
-
                <tr valign="top">
                  <th scope="row"><h1>Internal</h1>
                </tr>
@@ -91,6 +90,11 @@
                <tr valign="top">
                  <th scope="row">Logo - SVG</th>
                  <td><input type="url" name="internal[logo-svg]" value="<?php echo esc_url( $internal['logo-svg'] ); ?>" /></td>
+               </tr>
+
+               <tr valign="top">
+                 <th scope="row">General Icon</th>
+                 <td><input type="url" name="internal[general-logo]" value="<?php echo esc_url( $internal['general-logo'] ); ?>" /></td>
                </tr>
 
                <tr valign="top">

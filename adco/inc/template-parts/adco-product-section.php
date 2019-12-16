@@ -35,13 +35,13 @@
   // Query
   $query = new WP_Query( $args );
   ?>
-  <section class="home-section product contain">
-    <div>
-      <h1 class="title"><?php echo $product['title']; ?></h1>
-      <p class="subtitle"><?php echo esc_attr( $product['subtitle'] ); ?>
-    </div>
+
+  <div class="home-section product contain">
     <?php if( $query->have_posts() ) {
-      echo '<div class="slick-main">';
+      ?>
+      <div class="collection slick-main">
+        <a class="tablinks collection-item active" onclick="openService(event, 'overview')">Overview</a>
+      <?php
       while( $query->have_posts() ) {
         $query->the_post();
         /**
@@ -58,19 +58,9 @@
            $image = $feat;
          }
         ?>
-          <div class="card product">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator lazyload" src="<?php echo $image; ?>" alt="<?php echo get_the_title(); ?>" />
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4"><?php echo get_the_title(); ?><i class="material-icons right">more_vert</i></span>
-              <p><a href="<?php echo $link; ?>">Read More</a></p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4"><?php echo get_the_title(); ?><i class="material-icons right">close</i></span>
-              <?php echo get_the_content(); ?>
-            </div>
-          </div>
+        <a class="tablinks collection-item toggle" onclick="openService(event, '<?php echo get_post_field( 'post_name' ); ?>')">
+          <?php echo get_the_title(); ?>
+        </a>
       <?php
       } wp_reset_postdata();
       echo '</div>';
@@ -78,4 +68,4 @@
       echo "<h1>No $post Found</h1>";
     }
     ?>
-  </section>
+  </div>

@@ -17,8 +17,8 @@
   */
   $option = get_option( 'adco-contact-section' );
 ?>
-<section class="home-section contact contain">
-    <div class="content card">
+<section class="home-section contact">
+    <div class="content">
       <div class="head">
       <h2 class="header title"><?php echo $option['title']; ?></h2>
       </div>
@@ -26,10 +26,3 @@
         <?php echo do_shortcode( $option['shortcode'] ); ?>
     </div>
 </section>
-<!--- Modal --->
-<div class="contact modal" id="contactModal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <?php echo do_shortcode( $option['shortcode'] ); ?>
-  </div>
-</div>

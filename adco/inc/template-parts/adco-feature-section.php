@@ -35,7 +35,7 @@
    // Query
    $query = new WP_Query( $args );
  ?>
- <section class="home-section feature contain">
+ <div class="home-section feature">
    <h2 class="title"><?php echo  $option['title']; ?></h2>
    <?php
     if( $query->have_posts() ) {
@@ -76,12 +76,12 @@
                 </div>
                 <div class="card-stacked">
                   <div class="card-content">
-                    <h5><?php echo get_the_title(); ?></h5>
+                    <h5 class="open-bold"><?php echo get_the_title(); ?></h5>
                   </div>
                   <?php ?>
                   <?php if( $ext !== '' ) { ?>
                     <div class="card-action">
-                      <a href="<? echo $ext; ?>">View More</a>
+                      <a href="<? echo $ext; ?>" class="open-reg">View More</a>
                     </div>
                   <?php } ?>
                 </div>
@@ -96,4 +96,4 @@
       echo '<h2>No Projects Found</h2>';
     }
     ?>
- </section>
+ </div>

@@ -384,16 +384,41 @@ div.wpcf7-validation-errors:before {
  /**
   * Home Page
   */
+
+  /*--- Wrap ---*/
+  .home.wrap {
+    margin-bottom: 5vh;
+    padding: 0 3vw;
+  }
+  .home.wrap .card {
+    border-radius: 20px;
+  }
+
+  /*--- Main Section ---*/
+  .main.title {
+    display: flex;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 1rem;
+    background-color: #4DB6AC;
+    color: white;
+    border-radius:  15px 15px 0px 0px;
+  }
+  .main.title .title {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+  }
   #test {
     opacity: 0;
   }
   .home-section.contain {
-    padding: 5vh 5vw;
+    padding: 0vh 5vw;
   }
 
   /*--- Hero Banner ---*/
   .home-section.hero {
-    background-position: 0 50%;
+    background-position: 0 22%;
     background-repeat: no-repeat;
     background-size: 37%;
     background-attachment: fixed;
@@ -401,6 +426,8 @@ div.wpcf7-validation-errors:before {
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
+    text-align: center;
+    height: 80vh;
   }
   .home-section.hero h1 {
     line-height: 4rem;
@@ -419,38 +446,27 @@ div.wpcf7-validation-errors:before {
   }
 
   /*--- Product Section ---*/
-  .home-section.product .card-title {
-    font-size: 1.7rem;
+  .home-section.product {
+    margin: 2rem 0;
   }
-
-  .home-section.product a {
-    font-size: 0.7rem;
-  }
-  .home-section.product .card-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem 0;
-    height: 50vh;
-  }
-  .home-section.product .card-image img {
-    width: 50%;
-    margin: auto;
+  .home-section.product .collection-item {
+    text-align: center;
   }
 
 
   /*--- About Section ---*/
   .home-section.about {
-    background-size: 150%;
-    background-repeat: no-repeat;
-    background-position: -130% 100%;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    height: 77vh;
+    margin-bottom: 5vh;
+    min-height: 15rem;
+    display: none;
   }
-  .home-section.about p {
-    width: 85%;
+  .home-section.about.active {
+    display: block;
+  }
+  .home-section.about .image {
+    float: left;
+    width: 11rem;
+    padding: 1rem 2.5rem 0.5rem 0;
   }
 
   /*--- Contact Section ---*/
@@ -462,23 +478,23 @@ div.wpcf7-validation-errors:before {
     color: white;
     text-align: center;
     padding: 2rem 1rem;
+    margin-bottom: 5rem;
   }
-  .home-section.contact  ul input {
+  .home-section.contact form {
+    width: 70%;
+    margin: auto;
+  }
+  .home-section.contact form input {
     border-bottom: 1px solid #d1d1d1 !important;
+  }
+  .home-section.contact .center {
+    margin: 1rem 0;
+  }
+  .home-section.contact input[type="submit"] {
+    border-bottom: none !important;
   }
   .home-section.contact .header {
     position: relative;
-  }
-  .home-section.contact .header::after {
-    content: '';
-    width: 100%;
-    height: 2rem;
-    background-color: #EEC584;
-    position: absolute;
-    bottom: -1rem;
-    left: 0;
-    clip-path: polygon(50% 102%, 24% 0, 76% 0);
-    z-index: 777;
   }
   .home-section.contact a {
     display: block;
@@ -503,34 +519,40 @@ div.wpcf7-validation-errors:before {
   /**
    * Feature Section
    */
+   .home-section.feature {
+     position: relative;
+   }
    .home-section.feature .header, .home-section.feature .content {
      background-color: #ececec;
      padding: 1rem;
+   }
+   .home-section.feature .card-stacked {
+     text-align: center;
    }
    .home-section.feature .card-image {
      background-color: #4DB6AC;
      display: flex;
      padding: 1rem;
      position: relative;
+     border-radius: 20px 0 0 20px;
    }
-   .home-section.feature .card-image::after {
-     content: '';
-     background-color: #4DB6AC;
-     clip-path: polygon(0 60%,0 40%,100% 50%);
-     height: 100%;
-     width: 1.5rem;
-     position: absolute;
-     right: -1.5rem;
-     top: 0;
+   .home-section.feature .card-content {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding: 12px 24px;
    }
    .home-section.feature .card-image img {
-     width: 20vw !important;
+     width: 10vw !important;
+   }
+   .home-section.feature .title {
+     text-align: center;
+     background-color: #E59F73;
+     padding: 2rem 0;
+     color: white;
    }
    .home-section.feature ul {
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     justify-content: space-between;
+     padding: 0 5vw;
    }
 
   /**
@@ -549,8 +571,14 @@ div.wpcf7-validation-errors:before {
     /**
      * Home Page
      */
+     .home.wrap {
+       padding: 0 13vw;
+     }
+     .home-section.wrap {
+       padding: 0 5vw;
+     }
      .home-section.contain {
-       padding: 5vh 15vw;
+       padding: 0 5vw;
      }
 
      /* Hero Banner */
@@ -558,8 +586,12 @@ div.wpcf7-validation-errors:before {
        flex-direction: row;
        padding: 10vh 10vw;
        background-size: 20%;
-       background-position: 5% 100%;
+       background-position: 5% 20%;
        position: relative;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       max-height: 60vh;
      }
      .home-section.hero svg {
        flex: 0 0 50%;
@@ -568,27 +600,11 @@ div.wpcf7-validation-errors:before {
      }
 
      /*--- Product Section ---*/
-     .home-section.product .card-title {
-       font-size: 1rem;
-     }
-     .home-section.product img {
-       width: 100%;
-     }
-     .home-section.product .slick-slide {
-       margin: 0 0.5rem;
-     }
-     .home-section.product .slick-list {
-       margin: 0 -0.5rem;
-     }
 
      /*--- About Section ---*/
      .home-section.about {
        background-size: 25%;
        background-position: bottom right;
-       height: unset;
-       display: flex;
-       align-items: flex-start;
-       justify-content: center;
      }
 
      /*--- Feature Section ---*/
@@ -603,24 +619,24 @@ div.wpcf7-validation-errors:before {
      .home-section.feature li {
        width: 100%;
      }
+     .home-section.feature .card-image::after {
+       content: '';
+       background-color: #4DB6AC;
+       clip-path: polygon(0 60%,0 40%,100% 50%);
+       height: 100%;
+       width: 1.5rem;
+       position: absolute;
+       right: -1.5rem;
+       top: 0;
+     }
 
 
       /*--- Contact Section ---*/
       .home-section.contact .contact {
         padding-bottom: 3rem;
       }
-      .home-section.contact ul {
-        width: 50%;
-        padding: 2rem 0;
-        margin: 3rem auto;
-        background-color: #E59F71;
-        border-radius: 7px;
-      }
       .home-section.contact li {
         justify-content: center;
-      }
-      .home-section.contact input::placeholder, .home-section.contact input, .home-section.contact textarea::placeholder {
-        color: white;
       }
 
     .search .site-content {
@@ -672,10 +688,15 @@ div.wpcf7-validation-errors:before {
     .home-section.title {
       font-size: 4rem;
     }
+    .home.wrap {
+      padding: 0 20vw;
+    }
 
     .home-section.hero {
       background-size: 15%;
       background-position: 5% 25%;
+      max-height: unset;
+      min-height: 100vh;
     }
 
     .home-section.hero p {
@@ -683,12 +704,24 @@ div.wpcf7-validation-errors:before {
       line-height: 3rem;
     }
 
+    /*--- About Section ---*/
+    .home-section.about {
+      margin: 5rem 0;
+    }
     .home-section.about p {
       font-size: 1.3rem;
     }
 
-    /*--- Contact Section ---*/
-    .home-section.contact {
-      padding: 0 15vw 5vw;
+    /*--- Feature Section --- */
+    .home-section.feature ul {
+      padding: 0 5vw;
     }
+    .home-section.feature .card-stacked {
+      text-align: left;
+    }
+    .home-section.feature .card-content {
+      justify-content: flex-start;
+    }
+
+    /*--- Contact Section ---*/
   }

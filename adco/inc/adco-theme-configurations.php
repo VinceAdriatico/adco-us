@@ -10,6 +10,19 @@
    exit;
  }
 
+ /**
+  * Add ID to Minified JS
+ */
+ function add_id_attr( $tag, $handle ) {
+   if( 'minify' !== $handle )
+     return $tag;
+   return str_replace( ' src', ' id="minify" src', $tag );
+ }
+ add_filter( 'script_loader_tag', 'add_id_attr', 10, 2 );
+
+/**
+ * Contact Form 7
+ */
  add_filter( 'wpcf7_form_elements', 'mycustom_wpcf7_form_elements' );
 
  function mycustom_wpcf7_form_elements( $form ) {
