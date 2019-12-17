@@ -35,7 +35,7 @@
    $query = new WP_Query( $args );
 ?>
 <section id="overview" class="home-section about contain toggle active tabcontent">
-  <h2 class="title open-bold"><?php echo $option['title']; ?></h2>
+  <h2 class="title mon-semi-bold"><?php echo $option['title']; ?></h2>
   <?php echo $option['content']; ?>
 </section>
 <?php
@@ -44,7 +44,7 @@ if( $query->have_posts() ) {
     $query->the_post();
     ?>
   <section id="<?php echo get_post_field( 'post_name' ); ?>" class="home-section about contain toggle tabcontent">
-    <h2 class="title"><?php echo get_the_title(); ?></h2>
+    <h2 class="title mon-bold"><?php echo get_the_title(); ?></h2>
     <p>
       <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo get_the_title(); ?>" class="image" />
     <?php echo get_the_content(); ?>

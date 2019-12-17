@@ -1,18 +1,6 @@
 /**
- * Animations
+ * KeyFrames
  */
- .delay-3 {
-   animation-delay: 0.3s;
- }
- .delay-6 {
-   animation-delay: 0.6s;
- }
- .delay-9 {
-   animation-delay: 0.9s;
- }
- .delay-12 {
-   animation-delay: 1.2s;
- }
  @keyframes expand {
  	from {
  		transform: scale3d(0,0,0);
@@ -144,6 +132,34 @@
          opacity: 1
      }
  }
+ .delay-3 {
+   animation-delay: 0.3s;
+ }
+ .delay-6 {
+   animation-delay: 0.6s;
+ }
+ .delay-9 {
+   animation-delay: 0.9s;
+ }
+ .delay-12 {
+   animation-delay: 1.2s;
+ }
+
+/**
+ * Colors
+ */
+ .adco-green {
+   color: #4DB6AC;
+ }
+ .adco-yellow {
+   color: #ECC280;
+ }
+ .ado-orange {
+   color: #E59F73;
+ }
+ .adco-grey {
+   color: #7f8c8d;
+ }
 /**
  * Typography
  */
@@ -155,6 +171,11 @@
  @font-face {
    font-family: 'Montserrat Bold';
    src: url("fonts/Montserrat/Montserrat-Bold.ttf") format("truetype");
+   font-display: swap;
+ }
+ @font-face {
+   font-family: 'Montserrat Semi Bold';
+   src: url("fonts/Montserrat/Montserrat-SemiBold.ttf") format("truetype");
    font-display: swap;
  }
  @font-face {
@@ -187,6 +208,9 @@
  }
  .mon-bold {
    font-family: 'Montserrat Bold', "Helvetica", "Arial", sans-serif;
+ }
+ .mon-semi-bold {
+   font-family: 'Montserrat Semi Bold', 'Helvetica', 'Arial', sans-serif;
  }
  .mon-light {
    font-family: 'Montserrat Light', "Helvetica", "Arial", sans-serif;
@@ -418,16 +442,14 @@ div.wpcf7-validation-errors:before {
 
   /*--- Hero Banner ---*/
   .home-section.hero {
-    background-position: 0 22%;
+    background-position: 0 5%;
     background-repeat: no-repeat;
-    background-size: 37%;
-    background-attachment: fixed;
+    background-size: 60%;
     display: flex;
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    height: 80vh;
   }
   .home-section.hero h1 {
     line-height: 4rem;
@@ -542,6 +564,12 @@ div.wpcf7-validation-errors:before {
      justify-content: center;
      padding: 12px 24px;
    }
+   .home-section.feature .card-content h5 {
+     text-transform: uppercase;
+   }
+   .home-section.feature .card-action a {
+     margin-right: 0 !important;
+   }
    .home-section.feature .card-image img {
      width: 10vw !important;
    }
@@ -554,6 +582,20 @@ div.wpcf7-validation-errors:before {
    .home-section.feature ul {
      padding: 0 5vw;
    }
+
+   /**
+    * Landscape Orientation
+    */
+    @media screen and (orientation:landscape) {
+      /**
+       * Home Section
+       */
+       .home-section.hero {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+       }
+    }
 
   /**
    * Tablet & Up
@@ -591,7 +633,6 @@ div.wpcf7-validation-errors:before {
        display: flex;
        align-items: center;
        justify-content: center;
-       max-height: 60vh;
      }
      .home-section.hero svg {
        flex: 0 0 50%;
@@ -680,7 +721,20 @@ div.wpcf7-validation-errors:before {
       }
   }
 
+  @media screen and (min-width: 1024px) {
+    /**
+     * Home Section
+     */
 
+     /*--- Home Section ---*/
+     .home-section.hero {
+       background-attachment: fixed;
+     }
+  }
+
+  /**
+   * Small Desktop & Up
+   */
   @media screen and (min-width: 1200px) {
     /**
      * Home Sections
@@ -695,8 +749,6 @@ div.wpcf7-validation-errors:before {
     .home-section.hero {
       background-size: 15%;
       background-position: 5% 25%;
-      max-height: unset;
-      min-height: 100vh;
     }
 
     .home-section.hero p {

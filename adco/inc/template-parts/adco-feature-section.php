@@ -76,7 +76,7 @@
                 </div>
                 <div class="card-stacked">
                   <div class="card-content">
-                    <h5 class="open-bold"><?php echo get_the_title(); ?></h5>
+                    <h5 class="mon-bold adco-grey"><?php echo get_the_title(); ?></h5>
                   </div>
                   <?php ?>
                   <?php if( $ext !== '' ) { ?>
