@@ -253,8 +253,24 @@
    padding: 1rem;
    height: 10rem;
  }
+ nav a {
+   color: rgba(255,255,255, 0.7) !important; 
+   transition: all 0.7s ease;
+ }
+ nav a:visited {
+   color: rgba(255, 255, 255, 0.5) !important;
+ }
+ nav a:hover {
+   color: rgba(255, 255, 255, 1) !important;
+ }
  .main-navigation {
    padding-left: 1rem;
+ }
+ .main-navigation a {
+   color: rgba(255,255,255, 0.7);
+ }
+ .main-navigation a:visited {
+   color: rgba(255,255, 255, 0.5 );
  }
  .side-nav a {
    color: rgba(0,0,0, 0.8);
@@ -565,8 +581,8 @@ div.wpcf7-validation-errors:before {
      justify-content: center;
      padding: 12px 24px;
    }
-   .home-section.feature .card-content h5 {
-     text-transform: uppercase;
+   .home-section.feature .card-content h5, .home-section.feature .card-action a {
+     text-transform: none !important;
    }
    .home-section.feature .card-action a {
      margin-right: 0 !important;
@@ -627,13 +643,17 @@ div.wpcf7-validation-errors:before {
      /* Hero Banner */
      .home-section.hero {
        flex-direction: row;
-       padding: 10vh 10vw;
+       padding: 0vh 10vw 10vh 10vw;
        background-size: 20%;
        background-position: 5% 20%;
        position: relative;
        display: flex;
        align-items: center;
        justify-content: center;
+       text-align: left;
+     }
+     .home-section.hero h1 {
+       margin: 1rem 0;
      }
      .home-section.hero svg {
        flex: 0 0 50%;
@@ -768,9 +788,6 @@ div.wpcf7-validation-errors:before {
     /*--- Feature Section --- */
     .home-section.feature ul {
       padding: 0 5vw;
-    }
-    .home-section.feature .card-stacked {
-      text-align: left;
     }
     .home-section.feature .card-content {
       justify-content: flex-start;
