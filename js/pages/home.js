@@ -83,19 +83,21 @@
  */
   var home = {
     init: function() {
-      this.browser();
-      setTimeout(function() {
+      this.browser(true, function() {
         home.titleFade();
-      }, 3000);
+      })
     },
-    browser: function() {
+    browser: function(param, callback) {
       this.browserGen();
       this.heroFolders();
       this.heroTags();
       setTimeout(function() {
         home.heroRows();
         home.heroBtns();
-      }, 1000);  
+      }, 1000);
+      setTimeout(function() {
+        callback();
+      }, 2000)
     },
     fadeDown: function(selector) {
       jQuery(selector).velocity(fadeDown.start, fadeDown.o.slow)
