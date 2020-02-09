@@ -34,7 +34,7 @@
    gtag('js', new Date());
 
    gtag('config', 'UA-130661039-1');
- </script>  
+ </script>
 </head>
 
 <body <?php body_class(); ?>>
